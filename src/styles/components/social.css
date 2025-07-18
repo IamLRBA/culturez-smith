@@ -1,0 +1,57 @@
+/* components/_social.css */
+.social-icons {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social-icons.horizontal {
+  flex-direction: row;
+}
+
+.social-icons.vertical {
+  flex-direction: column;
+}
+
+.social-icons.primary a {
+  color: var(--primary-color);
+}
+
+.social-icons.primary a:hover {
+  color: color-mix(in srgb, var(--primary-color), black 10%);
+}
+
+.social-icons.light a {
+  color: var(--text-light);
+}
+
+.social-icons.light a:hover {
+  color: var(--primary-color);
+}
+
+.social-icons.small a {
+  font-size: 1rem;
+}
+
+.social-icons.normal a {
+  font-size: 1.2rem;
+}
+
+.social-icons.large a {
+  font-size: 1.5rem;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(var(--text-light), 0.1);
+  transition: all var(--transition-medium);
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  background: rgba(var(--primary-color), 0.2);
+}

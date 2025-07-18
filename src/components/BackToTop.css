@@ -1,0 +1,33 @@
+.back-to-top {
+  position: fixed;
+  bottom: -60px;
+  right: var(--spacing-md);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 0, 0, 0.354);
+  color: var(--white);
+  border-radius: var(--border-radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: var(--z-index-tooltip);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-medium);
+  opacity: 0;
+}
+
+.back-to-top.visible {
+  bottom: var(--spacing-md);
+  opacity: 1;
+}
+
+.back-to-top:hover {
+  background-color: rgba(0, 0, 0, 0.475);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.back-to-top svg {
+  font-size: 1.2rem;
+}

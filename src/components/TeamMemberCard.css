@@ -1,0 +1,214 @@
+/* Team Member Card Styles */
+.about-team-member-card {
+  background: rgba(255, 255, 255, 0.235);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  scroll-snap-align: start;
+  min-width: 250px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.about-team-member-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(59, 59, 59, 0.301);
+}
+
+.about-team-member-card.about-expanded {
+  min-width: 300px;
+  max-width: 300px;
+  background: rgba(179, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-team-member-card.about-ceo {
+  min-width: 350px;
+  max-width: 500px;
+  background: rgba(179, 0, 0, 0.215);
+  border: 2px solid var(--secondary-color);
+}
+
+.about-team-member-card.about-ceo:hover {
+  background: rgba(43, 0, 0, 0.457);
+}
+
+.about-team-member-card.about-ceo.about-expanded {
+  min-width: 500px;
+  max-width: 600px;
+  background: rgba(43, 0, 0, 0.457);
+}
+
+.about-team-member-image-container {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+}
+
+.about-team-member-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 3px solid var(--secondary-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-team-member-card.about-ceo .about-team-member-image {
+  width: 200px;
+  height: 200px;
+  border-width: 4px;
+}
+
+.about-team-member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.about-team-member-card:hover .about-team-member-image img {
+  transform: scale(1.05);
+}
+
+.about-team-member-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: var(--secondary-color);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border: 2px solid var(--white);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-team-member-card.about-ceo .about-team-member-icon {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+.about-team-member-info {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-team-member-info h3 {
+  color: var(--white);
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.5rem;
+}
+
+.about-team-member-card.about-ceo h3 {
+  font-size: 2rem;
+}
+
+.about-team-member-role {
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 0rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-team-member-card.about-ceo .about-team-member-role {
+  font-size: 1.1rem;
+}
+
+.about-team-member-bio {
+  margin-bottom: var(--spacing-md);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.about-team-member-card.about-ceo .about-team-member-bio {
+  font-size: 1rem;
+}
+
+.about-team-member-details {
+  margin-top: auto;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  animation: aboutFadeIn 0.5s ease;
+}
+
+.about-team-member-extended-bio {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.about-team-member-social {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.about-team-member-social a {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.about-team-member-social a:hover {
+  color: var(--white);
+  background: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .about-team-member-card {
+    min-width: 220px;
+    max-width: 220px;
+  }
+  
+  .about-team-member-card.about-expanded {
+    min-width: 280px;
+    max-width: 280px;
+  }
+  
+  .about-team-member-card.about-ceo {
+    min-width: 300px;
+    max-width: 300px;
+  }
+  
+  .about-team-member-card.about-ceo.about-expanded {
+    min-width: 350px;
+    max-width: 350px;
+  }
+  
+  .about-team-member-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .about-team-member-card.about-ceo .about-team-member-image {
+    width: 150px;
+    height: 150px;
+  }
+}

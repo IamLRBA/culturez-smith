@@ -1,0 +1,51 @@
+/* pages/_privacy.css */
+.privacy-page {
+  padding-top: 100px;
+}
+
+.privacy-page .container {
+  max-width: 800px;
+}
+
+.privacy-page h1 {
+  margin-bottom: var(--space-xs);
+}
+
+.privacy-page .last-updated {
+  color: var(--text-color);
+  margin-bottom: var(--space-lg);
+  font-size: 0.9rem;
+}
+
+.privacy-page .privacy-content section {
+  margin-bottom: var(--space-lg);
+}
+
+.privacy-page .privacy-content h2 {
+  margin-bottom: var(--space-sm);
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.privacy-page .privacy-content p {
+  margin-bottom: var(--space-sm);
+}
+
+.privacy-page .privacy-content ul {
+  margin-bottom: var(--space-sm);
+  padding-left: var(--space-md);
+}
+
+.privacy-page .privacy-content li {
+  margin-bottom: var(--space-xs);
+  position: relative;
+}
+
+.privacy-page .privacy-content li::before {
+  content: '•';
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}

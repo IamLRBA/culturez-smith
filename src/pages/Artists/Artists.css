@@ -1,0 +1,245 @@
+/* Artists.css - Complete Version */
+.artists-page {
+  padding-top: 70px;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* Blurred moving background with gradient overlay */
+.artists-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/images/hero-bg.jpg') center/cover no-repeat;
+  z-index: calc(var(--z-index-back) - 1);
+  animation: panBackground 10s linear infinite;
+  filter: blur(6px) brightness(0.4);
+  transform-origin: center;
+}
+
+.artists-page::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.523);
+  z-index: var(--z-index-back);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+@keyframes panBackground {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+  }
+  25% {
+    transform: scale(1.05) translate(-3%, -3%);
+  }
+  50% {
+    transform: scale(1.08) translate(0, 0);
+  }
+  75% {
+    transform: scale(1.05) translate(3%, 3%);
+  }
+}
+
+/* Animated music notes - now 7 notes */
+.music-note {
+  position: absolute;
+  color: rgba(179, 0, 0, 0.3);
+  font-size: 2rem;
+  z-index: var(--z-index-normal);
+  animation: floatNote 15s linear infinite;
+  opacity: 0;
+}
+
+.note-1 {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.note-2 {
+  top: 30%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.note-3 {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 6s;
+}
+
+.note-4 {
+  bottom: 40%;
+  right: 5%;
+  animation-delay: 9s;
+}
+
+.note-5 {
+  top: 15%;
+  right: 20%;
+  animation-delay: 12s;
+}
+
+.note-6 {
+  bottom: 30%;
+  left: 25%;
+  animation-delay: 15s;
+}
+
+.note-7 {
+  top: 60%;
+  right: 30%;
+  animation-delay: 18s;
+}
+
+@keyframes floatNote {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-500px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Section styling */
+.section-header {
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  z-index: var(--z-index-normal);
+}
+
+.artist-section-title {
+  font-family: var(--font-primary);
+  font-size: 6rem;
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--secondary-color);
+  box-shadow: 0 0 10px rgba(179, 0, 0, 0.5);
+}
+
+.section-subtitle {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--tertiary-color);
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Equalizer animation */
+.equalizer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin: var(--spacing-md) auto;
+}
+
+.equalizer .bar {
+  display: inline-block;
+  width: 6px;
+  height: 20px;
+  margin: 0 3px;
+  background: var(--secondary-color);
+  animation: equalize 1.5s infinite ease-in-out;
+  box-shadow: 0 0 5px rgba(179, 0, 0, 0.5);
+}
+
+.equalizer .bar:nth-child(1) { animation-delay: 0.1s; }
+.equalizer .bar:nth-child(2) { animation-delay: 0.3s; }
+.equalizer .bar:nth-child(3) { animation-delay: 0.6s; }
+.equalizer .bar:nth-child(4) { animation-delay: 0.9s; }
+.equalizer .bar:nth-child(5) { animation-delay: 1.2s; }
+
+@keyframes equalize {
+  0%, 100% { height: 10px; }
+  50% { height: 40px; }
+}
+
+/* Artists grid */
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  position: relative;
+  z-index: var(--z-index-normal);
+}
+
+/* Artist card animations */
+.artist-card-wrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.artist-card-wrapper.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .artists-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+  
+  .section-title {
+    font-size: 3.5rem;
+  }
+
+  .artists-page::before {
+    animation-duration: 20s; /* Slower movement on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .artists-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}

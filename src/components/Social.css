@@ -1,0 +1,125 @@
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.social-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  border-radius: var(--border-radius-circle);
+  transition: var(--transition-fast);
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+}
+
+/* Size Classes */
+.social-sm {
+  width: 30px;
+  height: 30px;
+  font-size: 0.9rem;
+}
+
+.social-md {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+}
+
+.social-lg {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+/* Color Classes */
+.social-default {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+.social-default:hover {
+  color: var(--secondary-color);
+}
+
+.social-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.social-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+.social-secondary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.social-secondary:hover {
+  background-color: var(--primary-color);
+}
+
+.social-white {
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+
+.social-white:hover {
+  color: var(--secondary-color);
+}
+
+/* Platform-specific colors */
+.social-link svg[data-icon="facebook"] {
+  color: #3b5998;
+}
+
+.social-link svg[data-icon="twitter"] {
+  color: #1DA1F2;
+}
+
+.social-link svg[data-icon="instagram"] {
+  color: #E1306C;
+}
+
+.social-link svg[data-icon="youtube"] {
+  color: #FF0000;
+}
+
+.social-link svg[data-icon="spotify"] {
+  color: #1DB954;
+}
+
+.social-link svg[data-icon="apple"] {
+  color: #000000;
+}
+
+.social-link svg[data-icon="soundcloud"] {
+  color: #FF5500;
+}
+
+.social-link svg[data-icon="deezer"] {
+  color: #FEAA2D;
+}
+
+.social-link svg[data-icon="tidal"] {
+  color: #00FFFF;
+}
+
+/* For colored background versions */
+.social-primary svg[data-icon="facebook"],
+.social-secondary svg[data-icon="facebook"],
+.social-white svg[data-icon="facebook"] {
+  color: inherit;
+}
+
+/* Repeat for other platforms */

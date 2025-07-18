@@ -1,0 +1,32 @@
+/* pages/_terms.css */
+.terms-page {
+  padding-top: 100px;
+}
+
+.terms-page .container {
+  max-width: 800px;
+}
+
+.terms-page h1 {
+  margin-bottom: var(--space-xs);
+}
+
+.terms-page .last-updated {
+  color: var(--text-color);
+  margin-bottom: var(--space-lg);
+  font-size: 0.9rem;
+}
+
+.terms-page .terms-content section {
+  margin-bottom: var(--space-lg);
+}
+
+.terms-page .terms-content h2 {
+  margin-bottom: var(--space-sm);
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.terms-page .terms-content p {
+  margin-bottom: var(--space-sm);
+}

@@ -1,0 +1,313 @@
+/* StudioServices.css */
+.ss-page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-top: 70px;
+  color: var(--white);
+}
+
+/* Background Styles */
+.ss-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-index-back);
+}
+
+.ss-blurred-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/studio-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: ss-bgPan 30s infinite linear;
+  filter: blur(4px);
+}
+
+@keyframes ss-bgPan {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.ss-musical-note {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.6);
+  z-index: var(--z-index-back);
+  pointer-events: none;
+  animation: ss-floatNote linear infinite;
+  will-change: transform;
+}
+
+@keyframes ss-floatNote {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(50px, -50px) rotate(90deg);
+  }
+  50% {
+    transform: translate(100px, -100px) rotate(180deg);
+  }
+  75% {
+    transform: translate(50px, -150px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, -200px) rotate(360deg);
+  }
+}
+
+.ss-bubble {
+  position: absolute;
+  background-color: rgba(179, 0, 0, 0.1);
+  border-radius: 50%;
+  z-index: var(--z-index-back);
+  pointer-events: none;
+  animation: ss-floatBubble ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes ss-floatBubble {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateY(-100px) scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-200px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Main Content Styles */
+.ss-main-section {
+  position: relative;
+  z-index: var(--z-index-normal);
+  padding: var(--spacing-xl) 0;
+}
+
+.ss-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.ss-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.ss-main-title {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background: linear-gradient(90deg, var(--white), var(--secondary-color));
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ss-titleShine 3s linear infinite;
+}
+
+@keyframes ss-titleShine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.ss-subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ss-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.ss-card {
+  background: rgb(0, 0, 0);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.352);
+  transition: var(--transition-medium);
+}
+
+.ss-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.ss-card-content {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-lg);
+  backdrop-filter: blur(5px);
+}
+
+.ss-icon-container {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-md);
+}
+
+.ss-icon {
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-radius: var(--border-radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: var(--transition-medium);
+}
+
+.ss-title {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--white);
+  text-align: center;
+}
+
+.ss-description {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.ss-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  color: var(--secondary-color);
+  font-weight: bold;
+  margin-bottom: var(--spacing-md);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.ss-toggle:hover {
+  color: var(--white);
+}
+
+.ss-equipment-list {
+  overflow: hidden;
+}
+
+.ss-equipment-list h4 {
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+}
+
+.ss-equipment-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ss-equipment-list li {
+  position: relative;
+  padding-left: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ss-equipment-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+}
+
+/* CTA Styles */
+.ss-cta {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: rgba(179, 0, 0, 0.2);
+  border-radius: var(--border-radius-lg);
+  border: 2px solid var(--secondary-color);
+}
+
+.ss-cta h3 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.ss-cta p {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.2rem;
+}
+
+.ss-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transition-medium);
+}
+
+.ss-cta-button:hover {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--secondary-color);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .ss-main-title {
+    font-size: 6rem;
+  }
+
+  .ss-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .ss-grid {
+    grid-template-columns: 1fr;
+  }
+}

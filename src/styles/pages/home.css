@@ -1,0 +1,188 @@
+/* pages/_home.css */
+.home-page .hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 0 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-dark);
+  color: var(--text-light);
+}
+
+.home-page .hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/images/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.home-page .hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.home-page .hero-text {
+  flex: 1;
+}
+
+.home-page .hero-text h1 {
+  margin-bottom: var(--space-md);
+}
+
+.home-page .hero-text h1 span {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-page .subtitle {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-md);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.home-page .description {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.home-page .hero-buttons {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.home-page .hero-image {
+  flex: 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.home-page .hero-social {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.home-page .scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.home-page .scroll-indicator .arrow {
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+  transform: rotate(-45deg);
+  margin-top: var(--space-xs);
+}
+
+.home-page .latest-releases .releases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-md);
+}
+
+.home-page .view-all {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+.home-page .featured-artists {
+  background: rgba(var(--light-shade), 0.5);
+}
+
+.home-page .featured-artists .artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-md);
+}
+
+.home-page .testimonials-section {
+  background: var(--gradient-dark);
+  color: var(--text-light);
+}
+
+.home-page .testimonials-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.home-page .testimonials-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  position: relative;
+}
+
+.home-page .testimonials-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+
+.home-page .testimonials-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+}
+
+.home-page .testimonials-dots .dot.active {
+  background: var(--secondary-color);
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .home-page .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .home-page .description {
+    max-width: 100%;
+  }
+  
+  .home-page .hero-buttons {
+    flex-direction: column;
+  }
+  
+  .home-page .releases-grid,
+  .home-page .artists-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}

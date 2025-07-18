@@ -1,0 +1,120 @@
+/* components/_cards.css */
+.card {
+  background: var(--light-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+}
+
+.card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.card-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(var(--dark-color), 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.card-image .overlay .play-button {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  border: none;
+  cursor: pointer;
+  transform: scale(0.8);
+  transition: all var(--transition-medium);
+}
+
+.card-content {
+  padding: var(--space-md);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card:hover .card-image .overlay {
+  opacity: 1;
+}
+
+.card:hover .card-image .overlay .play-button {
+  transform: scale(1);
+}
+
+.artist-card {
+  text-align: center;
+}
+
+.artist-card .artist-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.artist-card .artist-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.artist-card .artist-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(var(--primary-color), 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.artist-card .artist-info {
+  padding: var(--space-md);
+}
+
+.artist-card .artist-info h3 {
+  margin-bottom: 5px;
+  color: var(--dark-color);
+}
+
+.artist-card .artist-info p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.artist-card:hover .artist-image .overlay {
+  opacity: 1;
+}
+
+/* Other card styles would continue similarly... */

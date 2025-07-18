@@ -1,0 +1,10 @@
+/* pages/_releases.css */
+.releases-page {
+  padding-top: 100px;
+}
+
+.releases-page .releases-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
