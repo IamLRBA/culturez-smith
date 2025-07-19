@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaPlay, FaArrowRight, FaSpotify, FaApple, FaYoutube, FaDeezer } from 'react-icons/fa';
 import { SiTidal } from 'react-icons/si';
 import { motion, AnimatePresence } from 'framer-motion';
-import ArtistCard from '../../components/ArtistCard';
 import TestimonialCard from '../../components/TestimonialCard';
 import './Home.css';
 
