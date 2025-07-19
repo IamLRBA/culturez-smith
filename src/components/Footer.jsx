@@ -1,17 +1,14 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// Solid icons (for general UI elements)
 import { 
-  faHome,
-  faUsers,
-  faEnvelope,
   faMusic,
-  faCompactDisc,
-  faMicrophone,
-  faCalendar,
-  faShoppingBag,
-  faFileAlt,
-  faShieldAlt
+  faShieldAlt,
+  faFileAlt
 } from '@fortawesome/free-solid-svg-icons';
+
+// Brand icons (for social media & platforms)
 import { 
   faFacebook,
   faTwitter,
@@ -20,6 +17,17 @@ import {
   faSpotify,
   faApple
 } from '@fortawesome/free-brands-svg-icons';
+
+// Heroicons (for navigation links)
+import {
+  HiOutlineHome,
+  HiOutlineUsers,
+  HiOutlineMail,
+  HiOutlineShoppingBag,
+  HiOutlinePhotograph,
+  HiOutlineShoppingCart
+} from 'react-icons/hi';
+
 import './Footer.css';
 
 const Footer = () => {
@@ -40,7 +48,7 @@ const Footer = () => {
         <div className="footer-section brand-section">
           <div className="footer-logo">
             <FontAwesomeIcon icon={faMusic} className="logo-icon" />
-            <h3>Tizzy Camp</h3>
+            <h3>Culturez</h3>
           </div>
           <p className="brand-tagline">
             A collective of talented artists and producers dedicated to creating 
@@ -70,23 +78,12 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-section-title">Quick Links</h3>
           <ul className="footer-links">
-            <li><Link to="/"><FontAwesomeIcon icon={faHome} className="link-icon" /> Home</Link></li>
-            <li><Link to="/about"><FontAwesomeIcon icon={faUsers} className="link-icon" /> About Us</Link></li>
-            <li><Link to="/artists"><FontAwesomeIcon icon={faMicrophone} className="link-icon" /> Artists</Link></li>
-            <li><Link to="/releases"><FontAwesomeIcon icon={faMusic} className="link-icon" /> Releases</Link></li>
-            <li><Link to="/studio"><FontAwesomeIcon icon={faCompactDisc} className="link-icon" /> Studio</Link></li>
-            <li><Link to="/contact"><FontAwesomeIcon icon={faEnvelope} className="link-icon" /> Contact</Link></li>
-          </ul>
-        </div>
-        
-        {/* Studio Column */}
-        <div className="footer-section">
-          <h3 className="footer-section-title">G.O.E Records</h3>
-          <ul className="footer-links">
-            <li><Link to="/studio/services"><FontAwesomeIcon icon={faShoppingBag} className="link-icon" /> Services</Link></li>
-            <li><Link to="/studio/beat-store"><FontAwesomeIcon icon={faCompactDisc} className="link-icon" /> Beat Store</Link></li>
-            <li><Link to="/studio/gallery"><FontAwesomeIcon icon={faCalendar} className="link-icon" /> Gallery</Link></li>
-            <li><Link to="/studio/booking"><FontAwesomeIcon icon={faEnvelope} className="link-icon" /> Booking</Link></li>
+            <li><Link to="/"><HiOutlineHome className="link-icon" /> Home</Link></li>
+            <li><Link to="/about"><HiOutlineUsers className="link-icon" /> About Us</Link></li>
+            <li><Link to="/Products"><HiOutlineShoppingBag className="link-icon" /> Products</Link></li>
+            <li><Link to="/Gallery"><HiOutlinePhotograph className="link-icon" /> Gallery</Link></li>
+            <li><Link to="/Order"><HiOutlineShoppingCart className="link-icon" /> Order</Link></li>
+            <li><Link to="/contact"><HiOutlineMail className="link-icon" /> Contact</Link></li>
           </ul>
         </div>
         
@@ -98,17 +95,8 @@ const Footer = () => {
             <li><Link to="/terms"><FontAwesomeIcon icon={faFileAlt} className="link-icon" /> Terms of Service</Link></li>
           </ul>
           
-          <div className="platform-links">
-            <h4>Find Us On</h4>
-            <div className="platform-icons">
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
-                <FontAwesomeIcon icon={faSpotify} className="social-icon" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Apple Music">
-                <FontAwesomeIcon icon={faApple} className="social-icon" />
-              </a>
-            </div>
-          </div>
+          
+          
         </div>
       </div>
       
@@ -117,7 +105,7 @@ const Footer = () => {
         <p className="copyright">
           &copy; {new Date().getFullYear()} Tizzy Camp Music Label & G.O.E Records. All rights reserved.
         </p>
-        <p1 className="copyright">Designed by - LRBA</p1>
+        <p className="copyright">Designed by - LRBA</p>
       </div>
     </footer>
   );

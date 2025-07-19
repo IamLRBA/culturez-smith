@@ -1,6 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaHome, FaUsers, FaMusic, FaMicrophone, FaHeadphones, FaEnvelope, FaSearch, FaTimes, FaBars } from 'react-icons/fa';
+import {
+  HiOutlineHome,
+  HiOutlineUsers,
+  HiOutlinePhotograph,
+  HiOutlineShoppingBag,
+  HiOutlineShoppingCart,
+  HiOutlineMail,
+  HiOutlineSearch,
+  HiOutlineX,
+  HiOutlineMenu
+} from 'react-icons/hi';
 import { useSearch } from './SearchContext';
 import './Navbar.css';
 
@@ -63,12 +73,12 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { path: '/', name: 'Home', icon: <FaHome /> },
-    { path: '/about', name: 'About', icon: <FaUsers /> },
-    { path: '/artists', name: 'Artists', icon: <FaMicrophone /> },
-    { path: '/releases', name: 'Releases', icon: <FaMusic /> },
-    { path: '/studio', name: 'Studio', icon: <FaHeadphones /> },
-    { path: '/contact', name: 'Contact', icon: <FaEnvelope /> },
+    { path: '/', name: 'Home', icon: <HiOutlineHome /> },
+    { path: '/about', name: 'About', icon: <HiOutlineUsers /> },
+    { path: '/Products', name: 'Products', icon: <HiOutlineShoppingBag /> },
+    { path: '/Gallery', name: 'Gallery', icon: <HiOutlinePhotograph /> },
+    { path: '/Order', name: 'Order', icon: <HiOutlineShoppingCart /> },
+    { path: '/contact', name: 'Contact', icon: <HiOutlineMail /> },
   ];
 
   return (
@@ -121,17 +131,17 @@ const Navbar = () => {
                 )}
               </div>
               <button type="submit" className="navbar-search-submit">
-                <FaSearch />
+                <HiOutlineSearch />
               </button>
             </form>
           )}
           <button onClick={toggleSearch} className="navbar-search-toggle">
-            {searchOpen ? <FaTimes /> : <FaSearch />}
+            {searchOpen ? <HiOutlineX /> : <HiOutlineSearch />}
           </button>
         </div>
 
         <button onClick={toggleMenu} className="navbar-toggle">
-          {isOpen ? <FaTimes /> : <FaBars />}
+          {isOpen ? <HiOutlineX /> : <HiOutlineMenu />}
         </button>
       </div>
     </nav>

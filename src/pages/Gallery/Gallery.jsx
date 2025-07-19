@@ -4,9 +4,9 @@ import {
   FaVolumeUp, FaVolumeMute, FaPause, FaRedo
 } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import './StudioGallery.css';
+import './Gallery.css';
 
-const StudioGallery = () => {
+const Gallery = () => {
   const [activeTab, setActiveTab] = useState('photos');
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -552,4 +552,4 @@ const StudioGallery = () => {
   );
 };
 
-export default StudioGallery;
+export default Gallery;

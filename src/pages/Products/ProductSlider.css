@@ -1,0 +1,238 @@
+.product-slider-container {
+  padding: var(--spacing-md);
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 1000px;
+  padding: var(--spacing-md) 0;
+  gap: var(--spacing-md);
+}
+
+.slider-item {
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+  width: 200px;
+  height: 250px;
+  cursor: pointer;
+  position: relative;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-fast);
+}
+
+.slider-item:hover .slider-image {
+  box-shadow: var(--shadow-lg);
+}
+
+.slider-arrow {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: var(--z-index-tooltip);
+  transition: var(--transition-fast);
+  position: absolute;
+}
+
+.slider-arrow:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.slider-arrow.prev {
+  left: var(--spacing-md);
+}
+
+.slider-arrow.next {
+  right: var(--spacing-md);
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-sm) 0;
+  gap: var(--spacing-xs);
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--border-radius-circle);
+  background-color: var(--tertiary-color);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.slider-dot.active {
+  width: 16px;
+  height: 16px;
+  background-color: var(--secondary-color);
+}
+
+.product-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-index-modal);
+  padding: var(--spacing-md);
+}
+
+.modal-content {
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+  max-width: 900px;
+  width: 100%;
+  padding: var(--spacing-md);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--tertiary-color);
+  transition: var(--transition-fast);
+}
+
+.modal-close:hover {
+  color: var(--primary-color);
+  transform: rotate(90deg);
+}
+
+.modal-main-image {
+  width: 100%;
+  height: 400px;
+  margin-bottom: var(--spacing-md);
+}
+
+.modal-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modal-thumbnails {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.modal-thumbnail {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition-fast);
+}
+
+.modal-thumbnail:hover {
+  border-color: var(--secondary-color);
+}
+
+.modal-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info {
+  text-align: center;
+}
+
+.modal-info h3 {
+  font-family: var(--font-primary);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.modal-price {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+  margin-bottom: var(--spacing-md);
+}
+
+.modal-add-to-cart {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  transition: var(--transition-fast);
+}
+
+.modal-add-to-cart:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .slider-item {
+    width: 150px;
+    height: 200px;
+  }
+  
+  .modal-main-image {
+    height: 300px;
+  }
+  
+  .modal-thumbnail {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-item {
+    width: 120px;
+    height: 160px;
+  }
+  
+  .modal-main-image {
+    height: 250px;
+  }
+  
+  .modal-thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+}
