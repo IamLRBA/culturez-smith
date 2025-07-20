@@ -476,7 +476,7 @@ const Products = () => {
         products: [
           {
             id: 32,
-            title: 'Aviator Sunglasses',
+            title: 'Shades & Sunglasses',
             price: 79.99,
             images: Array(4).fill().map((_, i) => `/images/products/accessories/eyewear-${i+1}.jpg`),
             description: 'Classic aviator sunglasses with UV protection',
@@ -506,9 +506,33 @@ const Products = () => {
         products: [
           {
             id: 34,
-            title: 'Leather Bracelet',
+            title: 'Watches',
             price: 39.99,
-            images: Array(4).fill().map((_, i) => `/images/products/accessories/jewelry-${i+1}.jpg`),
+            images: Array(4).fill().map((_, i) => `/images/products/accessories/watch-${i+1}.jpg`),
+            description: 'Handcrafted leather bracelet with metal details',
+            addedToCart: false
+          },
+          {
+            id: 35,
+            title: 'Bracelets',
+            price: 39.99,
+            images: Array(4).fill().map((_, i) => `/images/products/accessories/bracelet-${i+1}.jpg`),
+            description: 'Handcrafted leather bracelet with metal details',
+            addedToCart: false
+          },
+          {
+            id: 36,
+            title: 'Necklaces',
+            price: 39.99,
+            images: Array(4).fill().map((_, i) => `/images/products/accessories/necklace-${i+1}.jpg`),
+            description: 'Handcrafted leather bracelet with metal details',
+            addedToCart: false
+          },
+          {
+            id: 37,
+            title: 'Rings',
+            price: 39.99,
+            images: Array(4).fill().map((_, i) => `/images/products/accessories/ring-${i+1}.jpg`),
             description: 'Handcrafted leather bracelet with metal details',
             addedToCart: false
           }
@@ -520,7 +544,7 @@ const Products = () => {
         titleImage: '/images/products/accessories/literature-title.jpg',
         products: [
           {
-            id: 35,
+            id: 38,
             title: 'Fashion Magazine',
             price: 14.99,
             images: Array(4).fill().map((_, i) => `/images/products/accessories/literature-${i+1}.jpg`),
@@ -537,7 +561,7 @@ const Products = () => {
         titleImage: '/images/products/underwear/boxers-title.jpg',
         products: [
           {
-            id: 36,
+            id: 39,
             title: 'Cotton Boxer Briefs',
             price: 24.99,
             images: Array(4).fill().map((_, i) => `/images/products/underwear/boxers-${i+1}.jpg`),
@@ -552,7 +576,7 @@ const Products = () => {
         titleImage: '/images/products/underwear/singlets-title.jpg',
         products: [
           {
-            id: 37,
+            id: 40,
             title: 'Cotton Singlet',
             price: 19.99,
             images: Array(4).fill().map((_, i) => `/images/products/underwear/singlets-${i+1}.jpg`),
@@ -567,58 +591,11 @@ const Products = () => {
         titleImage: '/images/products/underwear/socks-title.jpg',
         products: [
           {
-            id: 38,
+            id: 41,
             title: 'Premium Cotton Socks',
             price: 14.99,
             images: Array(4).fill().map((_, i) => `/images/products/underwear/socks-${i+1}.jpg`),
             description: 'Soft cotton blend socks with reinforced heels',
-            addedToCart: false
-          }
-        ]
-      }
-    ],
-    'Exhibition': [
-      {
-        id: 'exhibition-collaborations',
-        name: 'Collaborations',
-        titleImage: '/images/products/exhibition/collaborations-title.jpg',
-        products: [
-          {
-            id: 39,
-            title: 'Artist Collab Tee',
-            price: 59.99,
-            images: Array(4).fill().map((_, i) => `/images/products/exhibition/collaborations-${i+1}.jpg`),
-            description: 'Limited edition artist collaboration t-shirt',
-            addedToCart: false
-          }
-        ]
-      },
-      {
-        id: 'exhibition-styled',
-        name: 'Styled Works',
-        titleImage: '/images/products/exhibition/styled-title.jpg',
-        products: [
-          {
-            id: 40,
-            title: 'Signature Collection Jacket',
-            price: 199.99,
-            images: Array(4).fill().map((_, i) => `/images/products/exhibition/styled-${i+1}.jpg`),
-            description: 'Exclusive signature collection designer jacket',
-            addedToCart: false
-          }
-        ]
-      },
-      {
-        id: 'exhibition-designs',
-        name: 'Design Exhibitions',
-        titleImage: '/images/products/exhibition/designs-title.jpg',
-        products: [
-          {
-            id: 41,
-            title: 'Limited Edition Sneakers',
-            price: 249.99,
-            images: Array(4).fill().map((_, i) => `/images/products/exhibition/designs-${i+1}.jpg`),
-            description: 'Exclusive limited edition designer sneakers',
             addedToCart: false
           }
         ]
@@ -1340,7 +1317,7 @@ const Products = () => {
       <section className="products-cta-section">
         <div className="products-container">
           <div className="products-cta-content">
-            <h3>Have Questions or Need Assistance?</h3>
+            <h3>Need Assistance?</h3>
             <p>Our team is ready to help you with any inquiries about our products or your order.</p>
             <div className="cta-buttons">
               <Link to="/contact" className="cta-button">

@@ -198,7 +198,8 @@
 
 .category-sections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  position: center;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-xl);
 }
@@ -250,7 +251,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: var(--light-gray);
+  background-color: var(--white);
 }
 
 .section-title-container {
@@ -296,7 +297,7 @@
 .product-slider-container {
   position: relative;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 2000px;
   display: flex;
   align-items: center;
 }
@@ -307,6 +308,7 @@
 }
 
 .product-slider {
+  max-width: 1000px;
   display: flex;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -320,7 +322,7 @@
 .slider-item {
   scroll-snap-align: center;
   flex: 0 0 auto;
-  width: 250px;
+  width: 340px;
   transition: all var(--transition-medium);
   cursor: pointer;
   position: relative;
@@ -1008,7 +1010,7 @@
 .cta-buttons {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
   flex-wrap: wrap;
 }
 
@@ -1025,18 +1027,23 @@
 }
 
 .cta-button:hover {
-  background-color: var(--light-gray);
+  background-color: var(--secondary-color);
   transform: translateY(-2px);
+  color: var(--white);
+  border: 2px solid var(--white);
 }
 
 .cta-button.secondary {
-  background-color: transparent;
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
   color: var(--white);
   border: 2px solid var(--white);
 }
 
 .cta-button.secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--white);
+  color: var(--secondary-color);
 }
 
 /* Responsive Styles */
