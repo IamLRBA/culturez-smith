@@ -2,9 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import { FaShoppingCart, FaTimes, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from '../../components/ProductCard';
-import './Order.css';
+import './Culturez.css';
 
-const Order = () => {
+const Culturez = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -465,4 +465,4 @@ const Order = () => {
   );
 };
 
-export default Order;
+export default Culturez;

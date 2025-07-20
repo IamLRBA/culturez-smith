@@ -75,9 +75,9 @@ const Navbar = () => {
   const navLinks = [
     { path: '/', name: 'Home', icon: <HiOutlineHome /> },
     { path: '/about', name: 'About', icon: <HiOutlineUsers /> },
-    { path: '/Products', name: 'Products', icon: <HiOutlineShoppingBag /> },
+    { path: '/Shop', name: 'Shop', icon: <HiOutlineShoppingCart /> },
     { path: '/Gallery', name: 'Gallery', icon: <HiOutlinePhotograph /> },
-    { path: '/Order', name: 'Order', icon: <HiOutlineShoppingCart /> },
+    { path: '/Culturez', name: 'Culturez', icon: <HiOutlineShoppingBag /> },
     { path: '/contact', name: 'Contact', icon: <HiOutlineMail /> },
   ];
 
