@@ -2,9 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import { FaShoppingCart, FaTimes, FaArrowLeft, FaArrowRight, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import './Products.css';
+import './Shop.css';
 
-const Products = () => {
+const Shop = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -1334,4 +1334,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Shop;
