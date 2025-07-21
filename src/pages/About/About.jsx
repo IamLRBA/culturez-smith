@@ -52,7 +52,7 @@ const About = () => {
       role: 'Founder & CEO',
       icon: <FaCrown />,
       image: '/images/team/ceo.jpg',
-      extendedBio: 'With a background in artist development and business strategy, our CEO has guided Tizzy Camp from a small startup to a respected name in the industry. Their passion for discovering new talent and innovative approach to music business has been instrumental in our success.',
+      extendedBio: 'With a background in fashion design and business strategy, our CEO has guided Culturez from a small boutique to a respected name in the industry. Their passion for urban culture and innovative approach to contemporary style has been instrumental in our success.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -63,10 +63,10 @@ const About = () => {
     {
       id: 2,
       name: 'Team Member 1',
-      role: 'Head of A&R',
+      role: 'Head of Design',
       icon: <FaHeadphones />,
       image: '/images/team/member1.jpg',
-      extendedBio: 'With a decade of experience in talent scouting, our Head of A&R has an uncanny ability to spot emerging trends and raw talent. They work closely with artists to refine their sound and develop their unique artistic identity.',
+      extendedBio: 'With a decade of experience in fashion design, our Head of Design has an uncanny ability to spot emerging trends. They work closely with our team to refine collections and develop unique style identities.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -80,7 +80,7 @@ const About = () => {
       role: 'Marketing Director',
       icon: <FaChartLine />,
       image: '/images/team/member2.jpg',
-      extendedBio: 'Our Marketing Director combines data-driven strategies with creative storytelling to build compelling narratives around our artists. With expertise in digital marketing and brand development, they ensure our artists reach their target audiences effectively.',
+      extendedBio: 'Our Marketing Director combines data-driven strategies with creative storytelling to build compelling narratives around our brand. With expertise in digital marketing, they ensure our collections reach fashion-forward audiences effectively.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -91,10 +91,10 @@ const About = () => {
     {
       id: 4,
       name: 'Team Member 3',
-      role: 'Studio Manager',
+      role: 'Retail Manager',
       icon: <FaMusic />,
       image: '/images/team/member3.jpg',
-      extendedBio: 'With certifications from top audio engineering programs and years of hands-on experience, our Studio Manager maintains our state-of-the-art facilities and works closely with artists to achieve their desired sound. Their technical expertise is matched only by their creative problem-solving skills.',
+      extendedBio: 'With years of experience in high-end retail, our Retail Manager maintains our premium shopping experience. Their expertise in customer service is matched only by their deep knowledge of contemporary fashion.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -105,10 +105,10 @@ const About = () => {
     {
       id: 5,
       name: 'Team Member 4',
-      role: 'Artist Relations',
+      role: 'Brand Relations',
       icon: <FaMicrophone />,
       image: '/images/team/member4.jpg',
-      extendedBio: 'Our Artist Relations specialist serves as the primary point of contact for our artists, ensuring their needs are met and their voices are heard. With a background in artist management and a deep understanding of the creative process, they foster positive, productive relationships between artists and the label.',
+      extendedBio: 'Our Brand Relations specialist fosters partnerships with influencers and collaborators. With a background in urban fashion culture, they build bridges between our brand and the community we serve.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -123,25 +123,25 @@ const About = () => {
       id: 1,
       title: 'Integrity',
       summary: 'We conduct business with honesty and transparency.',
-      details: 'Every decision we make and every relationship we build is grounded in ethical practices. We believe that long-term success comes from doing what is right, not just what is profitable.'
+      details: 'Every collection we create and every relationship we build is grounded in ethical practices. We believe that long-term success comes from doing what is right, not just what is profitable.'
     },
     {
       id: 2,
       title: 'Innovation',
-      summary: 'We embrace creativity and forward-thinking approaches.',
-      details: 'In an ever-changing industry, we stay ahead by continuously exploring new ideas, technologies, and strategies. We encourage our team and artists to push boundaries and challenge conventions.'
+      summary: 'We embrace creativity and forward-thinking design.',
+      details: 'In an ever-changing fashion landscape, we stay ahead by continuously exploring new ideas, materials, and silhouettes. We challenge our team to push boundaries and redefine urban style.'
     },
     {
       id: 3,
       title: 'Excellence',
       summary: 'We strive for the highest quality in everything we do.',
-      details: 'From artist development to final production, we maintain rigorous standards. We invest in top-tier talent, equipment, and processes to ensure our output meets the highest professional benchmarks.'
+      details: 'From fabric selection to final stitching, we maintain rigorous standards. We invest in premium materials and craftsmanship to ensure our garments meet the highest benchmarks.'
     },
     {
       id: 4,
       title: 'Community',
-      summary: 'We build supportive networks for artists and staff.',
-      details: 'Music thrives in community. We foster collaborative environments where artists can grow, learn from each other, and find support. Our team operates as a family, with mutual respect at the core of all interactions.'
+      summary: 'We celebrate urban culture and its influence on fashion.',
+      details: 'Style thrives in community. We collaborate with local artists and cultural influencers to create collections that authentically represent the streets that inspire us.'
     }
   ];
 
@@ -169,9 +169,9 @@ const About = () => {
         <div className="about-hero-content">
           <h1 className="about-hero-title">
             <span className="about-title-part">About</span>
-            <span className="about-title-part">Tizzy Camp</span>
+            <span className="about-title-part">Culturez</span>
           </h1>
-          <p className="about-hero-subtitle">Where Talent Meets Opportunity</p>
+          <p className="about-hero-subtitle">Where Urban Culture Meets Contemporary Style</p>
         </div>
       </section>
 
@@ -185,24 +185,19 @@ const About = () => {
             <div className="about-history-text about-slide-in-left">
               <h3>The Beginning</h3>
               <p>
-                Tizzy Camp Music Label was founded in 2012 with a simple vision: to create a home for talented artists 
-                where they could develop their craft and share their music with the world. What started as a small 
-                collective of passionate musicians has grown into a full-fledged label and recording studio.
+                Culturez was founded in 2015 with a clear vision: to create a premium fashion brand that blends urban culture with contemporary style. What started as a small boutique has grown into a recognized name in fashion.
               </p>
               <h3>Our Mission</h3>
               <p>
-                We believe in the power of music to inspire, heal, and bring people together. Our mission is to 
-                nurture artistic talent, produce high-quality music, and create opportunities for our artists to 
-                succeed in the ever-evolving music industry.
+                We believe in the power of fashion to express identity and culture. Our mission is to create high-quality garments that bridge streetwear sophistication with modern design, offering style that speaks to the urban connoisseur.
               </p>
-              <h3>God Over Everything</h3>
+              <h3>Culture First</h3>
               <p>
-                The philosophy behind G.O.E Records reflects our core values. We put faith and integrity first in 
-                everything we do, creating music that uplifts and resonates with listeners on a deeper level.
+                Our philosophy reflects our core values. We put cultural authenticity first in everything we design, creating pieces that resonate with those who appreciate both urban roots and contemporary refinement.
               </p>
             </div>
             <div className="about-history-image about-slide-in-right">
-              <img src="/images/about-image1.jpg" alt="Tizzy Camp History" />
+              <img src="/images/about-image1.jpg" alt="Culturez History" />
             </div>
           </div>
         </div>
@@ -217,19 +212,19 @@ const About = () => {
           <div className="about-stats-grid">
             <div className="about-stat-card">
               <CountUp end={7} duration={3} suffix="+" className="about-stat-number" />
-              <p className="about-stat-label">Artists Signed</p>
+              <p className="about-stat-label">Collections Launched</p>
             </div>
             <div className="about-stat-card">
-              <CountUp end={80} duration={3} suffix="+" className="about-stat-number" />
-              <p className="about-stat-label">Songs Released</p>
+              <CountUp end={20} duration={3} suffix="+" className="about-stat-number" />
+              <p className="about-stat-label">Celebrities Styles</p>
             </div>
             <div className="about-stat-card">
-              <CountUp end={100} duration={3} suffix="M+" className="about-stat-number" />
-              <p className="about-stat-label">Streams Worldwide</p>
+              <CountUp end={100} duration={3} suffix="K+" className="about-stat-number" />
+              <p className="about-stat-label">Happy Customers</p>
             </div>
             <div className="about-stat-card">
-              <CountUp end={10} duration={3} suffix="+" className="about-stat-number" />
-              <p className="about-stat-label">Years in Business</p>
+              <CountUp end={8} duration={3} suffix="+" className="about-stat-number" />
+              <p className="about-stat-label">Years in Fashion</p>
             </div>
           </div>
         </div>

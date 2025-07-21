@@ -23,86 +23,86 @@ const Gallery = () => {
   const photoModalRef = useRef(null);
 
   // Sample data with metadata
-  const photos = [
-    { 
-      id: 1, 
-      src: '/images/studio/gallery1.jpg', 
-      alt: 'Studio Control Room',
-      description: 'Our state-of-the-art control room with SSL console',
-      date: '2023-05-15',
-      equipment: 'SSL 4000 G+ Console, Pro Tools HDX'
-    },
-    { 
-      id: 2, 
-      src: '/images/studio/gallery2.jpg', 
-      alt: 'Live Room',
-      description: 'The main live recording space with excellent acoustics',
-      date: '2023-05-20',
-      equipment: 'Yamaha C7 Grand Piano, Various Microphones'
-    },
-    { 
-      id: 3, 
-      src: '/images/studio/gallery3.jpg', 
-      alt: 'Vocal Booth',
-      description: 'Isolated vocal booth for pristine vocal recordings',
-      date: '2023-06-02',
-      equipment: 'Neumann U87, Avalon VT-737sp'
-    },
-    { 
-      id: 4, 
-      src: '/images/studio/gallery4.jpg', 
-      alt: 'Equipment Rack',
-      description: 'Our collection of outboard gear and processors',
-      date: '2023-06-10',
-      equipment: 'Universal Audio, Neve, API, Empirical Labs'
-    },
-    { 
-      id: 5, 
-      src: '/images/studio/gallery5.jpg', 
-      alt: 'Mixing Console',
-      description: 'The heart of our studio - the mixing console',
-      date: '2023-06-15',
-      equipment: 'SSL 4000 G+, Various Outboard Gear'
-    },
-    { 
-      id: 6, 
-      src: '/images/studio/gallery6.jpg', 
-      alt: 'Lounge Area',
-      description: 'Comfortable lounge for artists to relax',
-      date: '2023-06-20',
-      equipment: 'Comfortable seating, Refreshments'
-    }
-  ];
+const photos = [
+  { 
+    id: 1, 
+    src: '/images/studio/gallery1.jpg', 
+    alt: 'Celebrity Styling Session',
+    description: 'Our lead stylist working with a celebrity client on their red carpet look',
+    date: '2023-05-15',
+    equipment: 'Spring Collection, Custom Accessories'
+  },
+  { 
+    id: 2, 
+    src: '/images/studio/gallery2.jpg', 
+    alt: 'Fashion Editorial',
+    description: 'Behind-the-scenes of our latest editorial shoot featuring celebrity model',
+    date: '2023-05-20',
+    equipment: 'Premium Outerwear, Designer Collaborations'
+  },
+  { 
+    id: 3, 
+    src: '/images/studio/gallery3.jpg', 
+    alt: 'Runway Preparation',
+    description: 'Celebrity model getting final touches before hitting the runway',
+    date: '2023-06-02',
+    equipment: 'Signature Collection, Statement Pieces'
+  },
+  { 
+    id: 4, 
+    src: '/images/studio/gallery4.jpg', 
+    alt: 'Wardrobe Consultation',
+    description: 'Personal styling session with A-list celebrity client',
+    date: '2023-06-10',
+    equipment: 'Limited Edition Pieces, Custom Tailoring'
+  },
+  { 
+    id: 5, 
+    src: '/images/studio/gallery5.jpg', 
+    alt: 'Red Carpet Moment',
+    description: 'Celebrity wearing our custom-designed gown at major awards show',
+    date: '2023-06-15',
+    equipment: 'Haute Couture, Handcrafted Details'
+  },
+  { 
+    id: 6, 
+    src: '/images/studio/gallery6.jpg', 
+    alt: 'Press Event',
+    description: 'Celebrity ambassador at our flagship store opening',
+    date: '2023-06-20',
+    equipment: 'Seasonal Collection, Branded Merchandise'
+  }
+];
 
-  const videos = [
-    { 
-      id: 1, 
-      title: 'Studio Tour', 
-      src: '/videos/studio-tour.mp4', 
-      thumbnail: '/images/studio/video1.jpg',
-      description: 'Full tour of our recording facilities',
-      date: '2023-07-01',
-      duration: '2:45'
-    },
-    { 
-      id: 2, 
-      title: 'Recording Session', 
-      src: '/videos/session.mp4', 
-      thumbnail: '/images/studio/video2.jpg',
-      description: 'Behind-the-scenes of a recording session',
-      date: '2023-07-15',
-      duration: '4:20'
-    },
-    { 
-      id: 3, 
-      title: 'Behind the Scenes', 
-      src: '/videos/behind-scenes.mp4', 
-      thumbnail: '/images/studio/video3.jpg',
-      description: 'A day in the life at our studio',
-      date: '2023-08-05',
-      duration: '3:15'
-    }
-  ];
+const videos = [
+  { 
+    id: 1, 
+    title: 'Behind the Seams', 
+    src: '/videos/studio-tour.mp4', 
+    thumbnail: '/images/studio/video1.jpg',
+    description: 'Exclusive look at our celebrity styling process',
+    date: '2023-07-01',
+    duration: '2:45'
+  },
+  { 
+    id: 2, 
+    title: 'Runway Ready', 
+    src: '/videos/session.mp4', 
+    thumbnail: '/images/studio/video2.jpg',
+    description: 'Celebrity model preparing for fashion week in our latest collection',
+    date: '2023-07-15',
+    duration: '4:20'
+  },
+  { 
+    id: 3, 
+    title: 'Style Evolution', 
+    src: '/videos/behind-scenes.mp4', 
+    thumbnail: '/images/studio/video3.jpg',
+    description: 'Transforming a celebrity client from casual to red carpet ready',
+    date: '2023-08-05',
+    duration: '3:15'
+  }
+];
 
   // Create floating icons
   useEffect(() => {

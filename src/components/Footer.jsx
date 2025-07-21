@@ -35,7 +35,7 @@ const Footer = () => {
     <footer className="site-footer">
       {/* CTA Section */}
       <div className="footer-cta">
-        <h3>Ready to work with us?</h3>
+        <h3>Ready to elevate your style?</h3>
         <Link to="/contact" className="btn">Get In Touch</Link>
       </div>
 
@@ -51,8 +51,8 @@ const Footer = () => {
             <h3>Culturez</h3>
           </div>
           <p className="brand-tagline">
-            A collective of talented artists and producers dedicated to creating 
-            exceptional music and nurturing talent.
+            A premium fashion brand blending urban culture with contemporary style.
+            We create unique pieces that tell your story.
           </p>
           
           <div className="social-media">
@@ -103,7 +103,7 @@ const Footer = () => {
       {/* Copyright Section */}
       <div className="footer-bottom">
         <p className="copyright">
-          &copy; {new Date().getFullYear()} Tizzy Camp Music Label & G.O.E Records. All rights reserved.
+          &copy; {new Date().getFullYear()} Culturez by Smith. All rights reserved.
         </p>
         <p className="copyright">Designed by - LRBA</p>
       </div>
