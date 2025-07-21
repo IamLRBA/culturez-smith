@@ -6,17 +6,10 @@
   animation: aboutFloat linear infinite;
 }
 
-.about-floating-note {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512' fill='%23b30000'%3E%3Cpath d='M310.94 1.33l-96.53 28.51A32 32 0 0 0 192 60.34V360a148.76 148.76 0 0 0-48-8c-61.86 0-112 35.82-112 80s50.14 80 112 80 112-35.82 112-80V148.15l73-21.39a32 32 0 0 0 23-30.71V32a32 32 0 0 0-41.06-30.67z'%3E%3C/path%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  filter: drop-shadow(0 0 5px rgba(179, 0, 0, 0.5));
-}
-
 .about-floating-bubble {
-  background: rgba(179, 0, 0, 0.2);
+  background: rgba(0, 179, 9, 0.2);
   border-radius: 50%;
-  border: 1px solid rgba(179, 0, 0, 0.3);
+  border: 1px solid rgba(1, 93, 21, 0.3);
 }
 
 @keyframes aboutFloat {
@@ -67,7 +60,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(179, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  background: linear-gradient(135deg, rgba(0, 179, 45, 0.217) 0%, rgba(0, 0, 0, 0.7) 100%);
   z-index: -1;
 }
 
@@ -78,7 +71,7 @@
 }
 
 .about-hero-title {
-  font-size: 4rem;
+  font-size: 5rem;
   margin-bottom: var(--spacing-sm);
   font-weight: 800;
   text-transform: uppercase;
@@ -160,7 +153,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, var(--secondary-color), rgba(179, 0, 0, 0.5));
+  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
   z-index: -1;
   transform: skewX(-20deg) translateY(-50%);
   border-radius: 4px;
@@ -169,7 +162,7 @@
 
 /* History Section */
 .about-history-section {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.244);
 }
 
 .about-history-content {
@@ -203,7 +196,7 @@
 
 /* Stats Section */
 .about-stats-section {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(179, 0, 0, 0.3));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 179, 66, 0.3));
 }
 
 .about-stats-grid {
@@ -246,7 +239,7 @@
 
 /* Values Section */
 .about-values-section {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.443);
 }
 
 .about-values-grid {
@@ -275,7 +268,7 @@
 }
 
 .about-value-card.about-expanded {
-  background: rgba(179, 0, 0, 0.2);
+  background: rgba(0, 179, 60, 0.2);
   transform: translateY(-10px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
@@ -315,7 +308,7 @@
 
 /* Team Section */
 .about-team-section {
-  background: linear-gradient(135deg, rgba(179, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+  background: linear-gradient(135deg, rgba(0, 179, 69, 0.2), rgba(0, 0, 0, 0.8));
 }
 
 .about-ceo-card-container {

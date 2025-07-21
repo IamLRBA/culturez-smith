@@ -158,7 +158,8 @@
   gap: var(--spacing-xs);
   color: var(--tertiary-color);
   transition: var(--transition-fast);
-  font-size: 1.5rem;
+  font-family: var(--font-secondary);
+  font-size: 1rem;
 }
 
 .studio-gallery-tab:hover {
@@ -653,7 +654,7 @@
 
 @media (max-width: 480px) {
   .studio-gallery-hero-title {
-    font-size: 2rem;
+    font-size: 4rem;
   }
   
   .studio-gallery-photos-grid,
