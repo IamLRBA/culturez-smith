@@ -1,6 +1,6 @@
-# Tizzy Camp Music Label & G.O.E Records
+# CULTUREZ FASHION STORE
 
-![Tizzy Camp Background](./public/images/Tizzy-Camp-bg.PNG)
+![Culturez Background](./public/images/culturez-bg.PNG)
 
 ---
 
