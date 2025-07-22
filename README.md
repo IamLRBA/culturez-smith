@@ -6,9 +6,9 @@
 
 # Project Description
 
-This Tizzy Camp Music Label & G.O.E Records project is a professional website showcasing a collective of talented artists and a state-of-the-art recording studio. The platform serves as a digital hub for the music label, featuring artist profiles, music releases, studio services, booking information, and company details.
+This Culturez project is a professional website showcasing a premium fashion brand that blends urban culture with contemporary style. The platform serves as a digital hub for the brand, featuring product collections, lookbooks, brand story, and company details.
 
-Built as a modern single-page application using React, the website offers smooth navigation and responsive design to accommodate visitors across all device types. Key features include artist profiles with discographies, a beat store, studio gallery, booking system, and informational pages about the label.
+Built as a modern single-page application using React, the website offers smooth navigation and responsive design to accommodate visitors across all device types. Key features include product showcases, collection galleries, shopping functionality, and informational pages about the brand.
 
 ---
 
@@ -25,9 +25,9 @@ Built as a modern single-page application using React, the website offers smooth
 
 - Responsive design for all screen sizes
 - Smooth page transitions and scroll behaviors
-- Artist profiles and discographies
-- Studio services and booking information
-- Music releases catalog
+- Product collections and lookbooks
+- Shopping cart functionality
+- Brand story and philosophy
 - Contact forms and company information
 - Back-to-top and scroll restoration functionality
 
@@ -95,4 +95,4 @@ Contributions are welcome. Please open an issue to discuss proposed changes befo
 
 ## License
 
-This project is proprietary software owned by Tizzy Camp Music Label & G.O.E Records. All rights reserved.
+This project is proprietary software owned by Culturez®. All rights reserved.

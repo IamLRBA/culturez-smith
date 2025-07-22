@@ -450,7 +450,7 @@ export const SearchProvider = ({ children }) => {
     const pages = [
       {
         id: 1,
-        title: 'About Tizzy Camp',
+        title: 'About Culturez',
         type: 'page',
         path: '/about',
         category: 'Pages',

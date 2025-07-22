@@ -1,15 +1,15 @@
 // Application constants
-export const APP_NAME = "Tizzy Camp Music Label";
+export const APP_NAME = "Culturez";
 export const APP_DESCRIPTION = "A collective of talented artists and a state-of-the-art recording studio";
 
 // Social media links
 export const SOCIAL_LINKS = {
-  facebook: "https://facebook.com/tizzycamp",
-  twitter: "https://twitter.com/tizzycamp",
-  instagram: "https://instagram.com/tizzycamp",
-  youtube: "https://youtube.com/tizzycamp",
-  spotify: "https://open.spotify.com/artist/tizzycamp",
-  appleMusic: "https://music.apple.com/artist/tizzycamp"
+  facebook: "https://facebook.com/culturez",
+  twitter: "https://twitter.com/culturez",
+  instagram: "https://instagram.com/culturez",
+  youtube: "https://youtube.com/culturez",
+  spotify: "https://open.spotify.com/artist/culturez",
+  appleMusic: "https://music.apple.com/artist/culturez"
 };
 
 // Studio services
@@ -89,6 +89,6 @@ export const BEAT_LICENSES = [
 export const CONTACT_INFO = {
   address: "75a Better View Rd, Kampala, Uganda",
   phone: "+256 XXX XXX XXX",
-  email: "info@tizzycamp.com",
+  email: "info@culturez.com",
   whatsapp: "+256 XXX XXX XXX"
 };
