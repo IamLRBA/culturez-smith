@@ -33,9 +33,9 @@ const Header = () => {
   const navItems = [
     { path: '/', name: 'Home', icon: <FaHome /> },
     { path: '/about', name: 'About', icon: <FaUsers /> },
-    { path: '/artists', name: 'Artists', icon: <FaUsers /> },
-    { path: '/releases', name: 'Releases', icon: <FaMusic /> },
-    { path: '/studio', name: 'Studio', icon: <FaMicrophone /> },
+    { path: '/shop', name: 'Shop', icon: <FaUsers /> },
+    { path: '/gallery', name: 'Gallery', icon: <FaMusic /> },
+    { path: '/culturez', name: 'Culturez', icon: <FaMicrophone /> },
     { path: '/contact', name: 'Contact', icon: <FaEnvelope /> }
   ];
 
