@@ -80,9 +80,9 @@ const Footer = () => {
           <ul className="footer-links">
             <li><Link to="/"><HiOutlineHome className="link-icon" /> Home</Link></li>
             <li><Link to="/about"><HiOutlineUsers className="link-icon" /> About Us</Link></li>
-            <li><Link to="/Products"><HiOutlineShoppingBag className="link-icon" /> Products</Link></li>
+            <li><Link to="/Shop"><HiOutlineShoppingCart className="link-icon" /> Shop</Link></li>
             <li><Link to="/Gallery"><HiOutlinePhotograph className="link-icon" /> Gallery</Link></li>
-            <li><Link to="/Order"><HiOutlineShoppingCart className="link-icon" /> Order</Link></li>
+            <li><Link to="/Culturez"><HiOutlineShoppingBag className="link-icon" /> Culturez</Link></li>
             <li><Link to="/contact"><HiOutlineMail className="link-icon" /> Contact</Link></li>
           </ul>
         </div>

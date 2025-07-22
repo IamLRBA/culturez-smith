@@ -17,8 +17,11 @@ const Shop = () => {
   const [expandedSections, setExpandedSections] = useState({});
   const [sectionToExpand, setSectionToExpand] = useState(null);
   const [backgroundIcons, setBackgroundIcons] = useState([]);
+  const [navHistory, setNavHistory] = useState([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
   const cartRef = useRef(null);
   const pageRef = useRef(null);
+  const sliderRef = useRef(null);
 
   // Toggle section expansion
   const toggleSection = (sectionId) => {
@@ -26,6 +29,44 @@ const Shop = () => {
       ...prev,
       [sectionId]: !prev[sectionId]
     }));
+    addToHistory({ type: 'section', id: sectionId });
+  };
+
+  // Navigation history functions
+  const addToHistory = (item) => {
+    const newHistory = [...navHistory.slice(0, historyIndex + 1), item];
+    setNavHistory(newHistory);
+    setHistoryIndex(newHistory.length - 1);
+  };
+
+  const goBack = () => {
+    if (historyIndex > 0) {
+      const prevItem = navHistory[historyIndex - 1];
+      navigateToHistoryItem(prevItem);
+      setHistoryIndex(historyIndex - 1);
+    }
+  };
+
+  const goForward = () => {
+    if (historyIndex < navHistory.length - 1) {
+      const nextItem = navHistory[historyIndex + 1];
+      navigateToHistoryItem(nextItem);
+      setHistoryIndex(historyIndex + 1);
+    }
+  };
+
+  const navigateToHistoryItem = (item) => {
+    if (item.type === 'category') {
+      setActiveFilter(item.id);
+    } else if (item.type === 'section') {
+      const category = Object.keys(allProducts).find(cat => 
+        allProducts[cat].some(sec => sec.id === item.id)
+      );
+      if (category) {
+        setActiveFilter(category);
+        setExpandedSections(prev => ({ ...prev, [item.id]: true }));
+      }
+    }
   };
 
   // All product data organized by category and sections
@@ -623,8 +664,7 @@ const Shop = () => {
     setBubbles(newBubbles);
 
     // Create background icons
-    const icons = [
-    ];
+    const icons = [];
     const newIcons = [];
     for (let i = 0; i < 20; i++) {
       newIcons.push({
@@ -719,6 +759,7 @@ const Shop = () => {
   const openProductDetail = (product) => {
     setSelectedProduct(product);
     setCurrentImageIndex(0);
+    addToHistory({ type: 'product', id: product.id });
   };
 
   const closeProductDetail = () => {
@@ -739,6 +780,15 @@ const Shop = () => {
         setCurrentImageIndex(prev => 
           prev === currentSection.products.length - 1 ? 0 : prev + 1
         );
+        // Scroll to center the active item
+        if (sliderRef.current) {
+          const itemWidth = 340; // Width of each slider item
+          const scrollPosition = currentImageIndex * itemWidth;
+          sliderRef.current.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+          });
+        }
       }
     }
   };
@@ -757,6 +807,15 @@ const Shop = () => {
         setCurrentImageIndex(prev => 
           prev === 0 ? currentSection.products.length - 1 : prev - 1
         );
+        // Scroll to center the active item
+        if (sliderRef.current) {
+          const itemWidth = 340; // Width of each slider item
+          const scrollPosition = currentImageIndex * itemWidth;
+          sliderRef.current.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+          });
+        }
       }
     }
   };
@@ -790,6 +849,12 @@ const Shop = () => {
 
   const handleCategoryPreviewClick = (category, sectionId) => {
     setSectionToExpand({ category, sectionId });
+    addToHistory({ type: 'category', id: category });
+  };
+
+  const handleFilterChange = (category) => {
+    setActiveFilter(category);
+    addToHistory({ type: 'category', id: category });
   };
 
   return (
@@ -842,6 +907,26 @@ const Shop = () => {
         </motion.div>
       ))}
 
+      {/* Navigation Buttons */}
+      <div className="navigation-buttons">
+        <button 
+          className="nav-button back" 
+          onClick={goBack}
+          disabled={historyIndex <= 0}
+          title="Go back"
+        >
+          <FaArrowLeft />
+        </button>
+        <button 
+          className="nav-button forward" 
+          onClick={goForward}
+          disabled={historyIndex >= navHistory.length - 1}
+          title="Go forward"
+        >
+          <FaArrowRight />
+        </button>
+      </div>
+
       <section className="products-section">
         <div className="products-container">
           <motion.div
@@ -874,7 +959,7 @@ const Shop = () => {
               <button
                 key={category}
                 className={`products-category-filter ${activeFilter === category ? 'active' : ''}`}
-                onClick={() => setActiveFilter(category)}
+                onClick={() => handleFilterChange(category)}
               >
                 {category === 'all' ? 'All Products' : category}
               </button>
@@ -970,7 +1055,7 @@ const Shop = () => {
                               </button>
 
                               <div className="product-slider-center">
-                                <div className="product-slider">
+                                <div className="product-slider" ref={sliderRef}>
                                   {section.products.map((product, index) => (
                                     <motion.div
                                       key={product.id}
@@ -1009,6 +1094,16 @@ const Shop = () => {
                               >
                                 <FaArrowRight />
                               </button>
+                            </div>
+
+                            <div className="slider-scroll-track">
+                              <div 
+                                className="slider-scroll-thumb"
+                                style={{ 
+                                  width: `${100 / section.products.length}%`,
+                                  left: `${(currentImageIndex / section.products.length) * 100}%`
+                                }}
+                              />
                             </div>
 
                             <div className="slider-dots">
@@ -1323,9 +1418,9 @@ const Shop = () => {
               <Link to="/contact" className="cta-button">
                 Contact Us
               </Link>
-              <Link to="/" className="cta-button secondary">
-                Visit Homepage
-              </Link>
+              <Link to="/#message-section" className="cta-button secondary">
+  Message Us
+</Link>
             </div>
           </div>
         </div>

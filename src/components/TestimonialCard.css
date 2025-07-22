@@ -21,7 +21,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/images/fashion-bg7.jpg') center/cover no-repeat;
+  background: url('/images/hero-bg7.jpg') center/cover no-repeat;
   filter: blur(2px) brightness(0.7);
   z-index: -1;
   opacity: 1;
@@ -75,7 +75,7 @@
 
 .testimonial-content h4 {
   margin-bottom: var(--spacing-xs);
-  color: var(--light-gray);
+  color: rgb(174, 174, 174);
 }
 
 .testimonial-role {

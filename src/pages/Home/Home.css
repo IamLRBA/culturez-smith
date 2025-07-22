@@ -238,7 +238,7 @@
 }
 
 .home-release-card:hover .home-release-category {
-  background: rgba(27, 116, 27, 0.9);
+  background: #0e6033c4;
   color: white;
 }
 
@@ -319,179 +319,294 @@
 }
 
 .home-message-section {
-  background-color: var(--white);
-}
-
-.home-message-container {
+  background-color: transparent;
   position: relative;
   overflow: hidden;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-sm);
-  z-index: 1;
-  border: 2px solid rgb(27, 116, 27);
 }
 
-.home-message-background {
+.home-message-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.046);
+  backdrop-filter: blur(5px);
+  border: 2px solid var(--secondary-color);
+  transition: all 0.3s ease;
+  margin-top: var(--spacing-xl);
+}
+
+.home-message-wrapper:hover {
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0);
+}
+
+.home-message-image-container {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.home-message-image {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+.home-message-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.home-message-image-container:hover .home-message-image img {
+  transform: scale(1.05);
+}
+
+.home-support-badge {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('/images/fashion-bg2.jpg') center/cover no-repeat;
-  filter: blur(4px) brightness(0.8);
-  z-index: -1;
-  opacity: 0.9;
-  animation: homeBackgroundMove 30s infinite alternate;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 2;
+  transition: all 0.3s ease;
 }
 
-@keyframes homeBackgroundMove {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
+.home-support-badge svg {
+  margin-right: 8px;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
 }
 
 .home-message-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
+  padding: 50px;
+}
+
+.home-message-title {
+  color: var(--secondary-color);
+  font-size: 60px;
+}
+
+.home-message-subtitle {
+  color: #353535;
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
 .home-form-group {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.home-form-group:hover {
+  transform: translateX(5px);
 }
 
 .home-form-group input,
 .home-form-group textarea {
   width: 100%;
-  padding: var(--spacing-sm);
-  border: 1px solid var(--light-gray);
-  border-radius: var(--border-radius-sm);
-  font-family: var(--font-secondary);
-  transition: all var(--transition-fast);
+  padding: 15px 20px;
+  border: 1px solid #ecf0f1;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
 }
 
 .home-form-group input:focus,
 .home-form-group textarea:focus {
   outline: none;
-  border-color: var(--secondary-color);
-  box-shadow: 0 0 0 2px rgba(27, 116, 27, 0.1);
+  border-color: #0E6033;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  background: white;
 }
 
 .home-form-group textarea {
-  min-height: 150px;
   resize: vertical;
+  min-height: 120px;
 }
 
 .home-contact-method-selector {
-  margin: var(--spacing-md) 0;
+  margin: 30px 0;
+  transition: all 0.3s ease;
+}
+
+.home-contact-method-selector:hover {
+  transform: translateX(5px);
 }
 
 .home-contact-method-selector h4 {
-  margin-bottom: var(--spacing-sm);
-  color: var(--white);
+  margin-bottom: 15px;
+  color: #09391e;
 }
 
 .home-contact-method-options {
   display: flex;
-  gap: var(--spacing-md);
+  gap: 15px;
   flex-wrap: wrap;
 }
 
-.home-contact-method-options label {
+.home-contact-method-label {
   display: flex;
-  color: var(--white);
   align-items: center;
-  gap: var(--spacing-xs);
+  padding: 8px 15px;
+  border-radius: 30px;
+  background: #f8f9fa;
   cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #ecf0f1;
 }
 
-.home-contact-method-options input[type="radio"] {
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--tertiary-color);
-  border-radius: 50%;
-  transition: all var(--transition-fast);
-  position: relative;
+.home-contact-method-label:hover {
+  transform: translateY(-3px);
 }
 
-.home-contact-method-options input[type="radio"]:checked {
-  border-color: var(--secondary-color);
+.home-contact-method-label.home-contact-active {
+  background: #0E6033;
+  color: white;
+  border-color: #0E6033;
 }
 
-.home-contact-method-options input[type="radio"]:checked::after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: var(--secondary-color);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.home-contact-method-label input {
+  margin-right: 8px;
 }
 
 .home-submit-button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-xs);
-  padding: var(--spacing-sm) var(--spacing-md);
-  background: var(--secondary-color);
-  color: var(--white);
+  padding: 15px 30px;
+  background: #0E6033;
+  color: white;
   border: none;
-  border-radius: var(--border-radius-md);
-  font-weight: 600;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all var(--transition-fast);
-  width: 50%;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
 .home-submit-button:hover {
-  background: #145a1400;
-  transform: translateY(-2px);
-  border: 2px solid var(--white);
-  color: var(--white);
-}
-
-.home-submit-button:disabled {
-  background: var(--tertiary-color);
-  cursor: not-allowed;
-}
-
-.home-submit-button svg {
-  font-size: 1.2rem;
-}
-
-.home-message-success {
-  text-align: center;
-  padding: var(--spacing-lg);
-}
-
-.home-message-success h3 {
+  background: #ffffff;
   color: var(--secondary-color);
-  margin-bottom: var(--spacing-sm);
+  border: 2px solid var(--secondary-color);
 }
 
-.home-message-success p {
-  color: var(--tertiary-color);
+.home-whatsapp-btn {
+  background: #25D366;
+}
+
+.home-whatsapp-btn:hover {
+  background: #128C7E;
 }
 
 .home-spinner {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top-color: var(--white);
-  animation: homeSpin 1s ease-in-out infinite;
-  margin-right: var(--spacing-xs);
+  animation: home-spin 1s linear infinite;
+  margin-right: 10px;
 }
 
-@keyframes homeSpin {
+@keyframes home-spin {
+  from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.home-error-message {
+  color: #b30000;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.home-error-message::before {
+  content: '⚠ ';
+  margin-right: 5px;
+}
+
+/* Status Modal */
+.home-status-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: home-fadeIn 0.3s forwards;
+}
+
+@keyframes home-fadeIn {
+  to { opacity: 1; }
+}
+
+.home-status-content {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px);
+  animation: home-slideUp 0.3s forwards;
+}
+
+@keyframes home-slideUp {
+  to { transform: translateY(0); }
+}
+
+.home-status-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.home-success .home-status-icon {
+  color: #000000;
+}
+
+.home-error .home-status-icon {
+  color: #b30000;
+}
+
+.home-status-content h3 {
+  margin-bottom: 10px;
+  color: #09391e;
+}
+
+.home-status-content p {
+  color: #353535;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .home-message-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .home-message-image-container {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-message-form {
+    padding: 30px;
+  }
 }
 
 .home-gallery-section {

@@ -158,7 +158,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="contact-hero-content"
           >
-            <h1 className="contact-hero-title">Let's Connect</h1>
+            <h1 className="contact-hero-title">Contact Us</h1>
             <p className="contact-hero-subtitle">We're here to help and answer any questions you might have.</p>
             <div className="contact-scrolling-text">
               <motion.div
@@ -247,7 +247,7 @@ const Contact = () => {
                   <FaPhone />
                 </div>
                 <h3>Phone</h3>
-                <p>+256 760 316 738</p>
+                <p>+256 776 521 400</p>
                 <a 
                   href="tel:+256760316738" 
                   className={`contact-call-link contact-${cardColors.phone}-link`}
@@ -266,7 +266,7 @@ const Contact = () => {
                   <FaEnvelope />
                 </div>
                 <h3>Email</h3>
-                <p>info@tizzycamp.com</p>
+                <p>culturezbysmith.com</p>
                 <a 
                   href="mailto:info@tizzycamp.com" 
                   className={`contact-email-link contact-${cardColors.email}-link`}
@@ -290,7 +290,7 @@ const Contact = () => {
                     <FaWhatsapp />
                   </div>
                   <h3>WhatsApp</h3>
-                  <p>+256 760 316 738</p>
+                  <p>+256 776 521 400</p>
                   <span className="contact-whatsapp-cta">Message Us</span>
                 </a>
               </motion.div>
@@ -412,7 +412,7 @@ const Contact = () => {
                 style={{ border: 0 }} 
                 allowFullScreen="" 
                 loading="lazy"
-                title="Tizzy Camp Location"
+                title="Cluturez Location"
               ></iframe>
             </div>
           </motion.div>
