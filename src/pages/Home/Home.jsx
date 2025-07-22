@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { FaArrowRight, FaWhatsapp, FaEnvelope, FaComment, FaTimes } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ImSpinner8 } from 'react-icons/im';
+import { IoCheckmarkDone } from 'react-icons/io5';
+import { MdErrorOutline } from 'react-icons/md';
+import { RiCustomerService2Fill } from 'react-icons/ri';
+import emailjs from 'emailjs-com';
 import TestimonialCard from '../../components/TestimonialCard';
 import './Home.css';
 
@@ -12,11 +17,13 @@ const Home = () => {
     name: '',
     email: '',
     phone: '',
+    subject: '',
     message: '',
-    contactMethod: 'text'
+    contactMethod: 'email'
   });
-  const [isSending, setIsSending] = useState(false);
-  const [isSent, setIsSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState(null);
   const [heroLoaded, setHeroLoaded] = useState(false);
   const navigate = useNavigate();
 
@@ -57,23 +64,47 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSending(true);
-    
-    setTimeout(() => {
-      setIsSending(false);
-      setIsSent(true);
+    setIsLoading(true);
+    setError(null);
+
+    if (formData.contactMethod === 'whatsapp') {
+      const phoneNumber = '256760316738';
+      const message = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nSubject: ${formData.subject}\nMessage: ${formData.message}`
+      );
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+      setIsSuccess(true);
+      setTimeout(() => setIsSuccess(false), 5000);
+      setIsLoading(false);
+      return;
+    }
+
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      formData,
+      process.env.REACT_APP_EMAILJS_USER_ID
+    )
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      setIsSuccess(true);
       setFormData({
         name: '',
         email: '',
         phone: '',
+        subject: '',
         message: '',
-        contactMethod: 'text'
+        contactMethod: 'email'
       });
-      
-      setTimeout(() => {
-        setIsSent(false);
-      }, 5000);
-    }, 2000);
+      setTimeout(() => setIsSuccess(false), 5000);
+    })
+    .catch((err) => {
+      console.error('FAILED...', err);
+      setError('Failed to send message. Please try again later or use WhatsApp.');
+    })
+    .finally(() => {
+      setIsLoading(false);
+    });
   };
 
   const culturezItems = [
@@ -101,11 +132,11 @@ const Home = () => {
     },
     {
       id: 3,
-      title: 'Premium Sweater',
-      category: 'Sweaters',
+      title: 'Premium Hoodie',
+      category: 'Hoodies',
       cover: '/images/culturez/sweater.jpg',
       date: '2023-05-20',
-      description: 'Hand-knitted premium wool sweater with unique patterns. Keeps you warm while maintaining style during colder seasons.',
+      description: 'Hand-knitted premium wool hoodie with unique patterns. Keeps you warm while maintaining style during colder seasons.',
       price: '$89.99',
       sizes: ['S', 'M', 'L', 'XL'],
       colors: ['Cream', 'Gray', 'Burgundy']
@@ -152,14 +183,6 @@ const Home = () => {
 
   const handleCardClick = (id) => {
     setExpandedRelease(expandedRelease === id ? null : id);
-  };
-
-  const getContactIcon = () => {
-    switch(formData.contactMethod) {
-      case 'whatsapp': return <FaWhatsapp />;
-      case 'email': return <FaEnvelope />;
-      default: return <FaComment />;
-    }
   };
 
   return (
@@ -280,111 +303,177 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="home-section home-message-section">
+      <section id="contact-form" className="home-section home-message-section">
         <div className="home-container">
-          <h2 className="home-section-title"><span className="home-highlighted-border">Message</span> Us</h2>
-          <div className="home-message-container">
-            <div className="home-message-background"></div>
-            {isSent ? (
-              <div className="home-message-success">
-                <h3>Thank You!</h3>
-                <p>Your message has been sent successfully. We'll get back to you soon.</p>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="home-message-wrapper"
+          >
+            <div className="home-message-image-container">
+              <div className="home-message-image">
+                <img src="/images/contact-image1.jpg" alt="Contact Us" />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="home-message-form">
-                <div className="home-form-group">
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Full Name"
-                    required
-                  />
+              <div className="home-support-badge">
+                <RiCustomerService2Fill />
+                <span>24/7 Support</span>
+              </div>
+            </div>
+            
+            <form onSubmit={handleSubmit} className="home-message-form">
+              <h2 className="home-message-title">Message Us</h2>
+              <p className="home-message-subtitle">Fill out the form below and select your preferred contact method</p>
+              
+              <div className="home-form-group">
+                <input 
+                  type="text" 
+                  name="name" 
+                  placeholder="Your Full Name" 
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              
+              <div className="home-form-group">
+                <input 
+                  type="email" 
+                  name="email" 
+                  placeholder="Your Email Address" 
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required={formData.contactMethod === 'email'}
+                />
+              </div>
+              
+              <div className="home-form-group">
+                <input 
+                  type="tel" 
+                  name="phone" 
+                  placeholder="Your Phone Number" 
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required={formData.contactMethod === 'whatsapp' || formData.contactMethod === 'text'}
+                />
+              </div>
+              
+              <div className="home-form-group">
+                <input 
+                  type="text" 
+                  name="subject" 
+                  placeholder="Subject" 
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              
+              <div className="home-form-group">
+                <textarea 
+                  name="message" 
+                  placeholder="Your Detailed Message" 
+                  rows="5"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                ></textarea>
+              </div>
+              
+              <div className="home-contact-method-selector">
+                <h4>Preferred Contact Method:</h4>
+                <div className="home-contact-method-options">
+                  <label className={`home-contact-method-label ${formData.contactMethod === 'email' ? 'home-contact-active' : ''}`}>
+                    <input 
+                      type="radio" 
+                      name="contactMethod" 
+                      value="email" 
+                      checked={formData.contactMethod === 'email'}
+                      onChange={handleInputChange}
+                    />
+                    <span>Email</span>
+                  </label>
+                  <label className={`home-contact-method-label ${formData.contactMethod === 'whatsapp' ? 'home-contact-active' : ''}`}>
+                    <input 
+                      type="radio" 
+                      name="contactMethod" 
+                      value="whatsapp" 
+                      checked={formData.contactMethod === 'whatsapp'}
+                      onChange={handleInputChange}
+                    />
+                    <span>WhatsApp</span>
+                  </label>
+                  <label className={`home-contact-method-label ${formData.contactMethod === 'text' ? 'home-contact-active' : ''}`}>
+                    <input 
+                      type="radio" 
+                      name="contactMethod" 
+                      value="text" 
+                      checked={formData.contactMethod === 'text'}
+                      onChange={handleInputChange}
+                    />
+                    <span>Text Message</span>
+                  </label>
                 </div>
-                <div className="home-form-group">
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="Email Address"
-                    required
-                  />
-                </div>
-                <div className="home-form-group">
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder="Phone Number"
-                    required
-                  />
-                </div>
-                <div className="home-form-group">
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Your message here..."
-                    required
-                  />
-                </div>
-                
-                <div className="home-contact-method-selector">
-                  <h4>Preferred Contact Method:</h4>
-                  <div className="home-contact-method-options">
-                    <label>
-                      <input
-                        type="radio"
-                        name="contactMethod"
-                        value="text"
-                        checked={formData.contactMethod === 'text'}
-                        onChange={handleInputChange}
-                      />
-                      <span>Text</span>
-                    </label>
-                    <label>
-                      <input
-                        type="radio"
-                        name="contactMethod"
-                        value="whatsapp"
-                        checked={formData.contactMethod === 'whatsapp'}
-                        onChange={handleInputChange}
-                      />
-                      <span>WhatsApp</span>
-                    </label>
-                    <label>
-                      <input
-                        type="radio"
-                        name="contactMethod"
-                        value="email"
-                        checked={formData.contactMethod === 'email'}
-                        onChange={handleInputChange}
-                      />
-                      <span>Email</span>
-                    </label>
-                  </div>
-                </div>
+              </div>
+              
+              {error && <p className="home-error-message">{error}</p>}
+              
+              <button 
+                type="submit" 
+                className={`home-submit-button ${formData.contactMethod === 'whatsapp' ? 'home-whatsapp-btn' : ''}`}
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <ImSpinner8 className="home-spinner" /> 
+                    {formData.contactMethod === 'whatsapp' ? 'Opening WhatsApp...' : 'Sending Message...'}
+                  </>
+                ) : (
+                  <>
+                    {formData.contactMethod === 'email' && 'Send Email'}
+                    {formData.contactMethod === 'whatsapp' && (
+                      <>
+                        <FaWhatsapp /> Send via WhatsApp
+                      </>
+                    )}
+                    {formData.contactMethod === 'text' && 'Send Text Message'}
+                  </>
+                )}
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      </section>
 
-                <button type="submit" className="home-submit-button" disabled={isSending}>
-                  {isSending ? (
-                    <>
-                      <div className="home-spinner"></div>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      {getContactIcon()} Send via {formData.contactMethod.charAt(0).toUpperCase() + formData.contactMethod.slice(1)}
-                    </>
-                  )}
+      {(isSuccess || error) && (
+        <div className={`home-status-modal ${isSuccess ? 'home-success' : 'home-error'}`}>
+          <div className="home-status-content">
+            {isSuccess ? (
+              <>
+                <IoCheckmarkDone className="home-status-icon" />
+                <h3>Message Sent Successfully!</h3>
+                <p>We'll get back to you soon. Thank you for reaching out.</p>
+              </>
+            ) : (
+              <>
+                <MdErrorOutline className="home-status-icon" />
+                <h3>Message Failed to Send</h3>
+                <p>{error}</p>
+                <button 
+                  className="home-submit-button home-whatsapp-btn"
+                  onClick={() => {
+                    setError(null);
+                    setFormData(prev => ({ ...prev, contactMethod: 'whatsapp' }));
+                  }}
+                >
+                  <FaWhatsapp /> Try WhatsApp Instead
                 </button>
-              </form>
+              </>
             )}
           </div>
         </div>
-      </section>
+      )}
 
       <section className="home-section home-gallery-section">
         {galleryBubbles.map((bubble) => (

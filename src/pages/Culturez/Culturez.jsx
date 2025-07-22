@@ -20,92 +20,47 @@ const Culturez = () => {
     // Shirts and Tees
     {
       id: 1,
-      title: 'Casual Tee',
-      category: 'Shirts and Tees',
+      title: 'T-Shirt',
+      category: 'Shirts and T-Shirts',
       price: 29.99,
       images: Array(4).fill().map((_, i) => `/images/products/shirts/casual-${i+1}.jpg`)
     },
     {
       id: 2,
-      title: 'Checked Shirt',
-      category: 'Shirts and Tees',
+      title: 'Shirt',
+      category: 'Shirts and T-Shirts',
       price: 39.99,
-      images: Array(4).fill().map((_, i) => `/images/products/shirts/checked-${i+1}.jpg`)
+      images: Array(4).fill().map((_, i) => `/images/products/shirts/vintage-title.jpg`)
     },
-    // Bottoms
+    // Pants
     {
       id: 3,
-      title: 'Cargo Shorts',
-      category: 'Bottoms',
+      title: 'Shorts',
+      category: 'Pants',
       price: 49.99,
-      images: Array(4).fill().map((_, i) => `/images/products/bottoms/cargo-shorts-${i+1}.jpg`)
+      images: Array(4).fill().map((_, i) => `/images/culturez/pants.jpg`)
     },
     {
       id: 4,
-      title: 'Denim Jeans',
-      category: 'Bottoms',
+      title: 'Trouser',
+      category: 'Pants',
       price: 59.99,
-      images: Array(4).fill().map((_, i) => `/images/products/bottoms/denim-${i+1}.jpg`)
+      images: Array(4).fill().map((_, i) => `/images/products/bottoms/gentle-1.jpg`)
     },
-    // Coats and Jackets
+    // Sweaters and Hoodies
     {
       id: 5,
-      title: 'Leather Jacket',
-      category: 'Coats and Jackets',
+      title: 'Sweater',
+      category: 'Sweaters and Hoodies',
       price: 129.99,
-      images: Array(4).fill().map((_, i) => `/images/products/coats/leather-${i+1}.jpg`)
+      images: Array(4).fill().map((_, i) => `/images/products/coats/sweater-1.jpg`)
     },
     {
       id: 6,
-      title: 'Bomber Jacket',
-      category: 'Coats and Jackets',
+      title: 'Hoodie',
+      category: 'Sweaters and Hoodies',
       price: 89.99,
-      images: Array(4).fill().map((_, i) => `/images/products/coats/bomber-${i+1}.jpg`)
-    },
-    // Footwear
-    {
-      id: 7,
-      title: 'Streetwear Sneakers',
-      category: 'Footwear',
-      price: 79.99,
-      images: Array(4).fill().map((_, i) => `/images/products/footwear/sneakers-${i+1}.jpg`)
-    },
-    {
-      id: 8,
-      title: 'Casual Loafers',
-      category: 'Footwear',
-      price: 69.99,
-      images: Array(4).fill().map((_, i) => `/images/products/footwear/casual-${i+1}.jpg`)
-    },
-    // Accessories
-    {
-      id: 9,
-      title: 'Leather Backpack',
-      category: 'Accessories',
-      price: 59.99,
-      images: Array(4).fill().map((_, i) => `/images/products/accessories/backpack-${i+1}.jpg`)
-    },
-    {
-      id: 10,
-      title: 'Aviator Sunglasses',
-      category: 'Accessories',
-      price: 39.99,
-      images: Array(4).fill().map((_, i) => `/images/products/accessories/eyewear-${i+1}.jpg`)
-    },
-    // Underwear
-    {
-      id: 11,
-      title: 'Cotton Boxers',
-      category: 'Underwear',
-      price: 19.99,
-      images: Array(4).fill().map((_, i) => `/images/products/underwear/boxers-${i+1}.jpg`)
-    },
-    {
-      id: 12,
-      title: 'Premium Socks',
-      category: 'Underwear',
-      price: 14.99,
-      images: Array(4).fill().map((_, i) => `/images/products/underwear/socks-${i+1}.jpg`)
+      images: Array(4).fill().map((_, i) => `/images/products/coats/hoodie-title.jpg`)
     }
   ];
 
@@ -204,7 +159,7 @@ const Culturez = () => {
             transition={{ duration: 0.8 }}
             className="order-header"
           >
-            <h2 className="order-title">Order Products</h2>
+            <h2 className="order-title">Culturez Products</h2>
             <p className="order-subtitle">
               Select items from our collection and place your order
             </p>
