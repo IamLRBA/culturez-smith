@@ -60,7 +60,9 @@ const Navbar = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate('/search-results');
+      if (searchSuggestions.length > 0) {
+        navigate('/search-results');
+      }
       setShowSuggestions(false);
     }
   };
@@ -85,8 +87,8 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-culturez-logo">
-  <span>CULTUREZ</span>
-</Link>
+          <span>CULTUREZ</span>
+        </Link>
 
         <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
@@ -115,18 +117,27 @@ const Navbar = () => {
                   className="navbar-search-input"
                   autoFocus
                 />
-                {showSuggestions && searchSuggestions.length > 0 && (
+                {showSuggestions && (
                   <div className="search-suggestions">
-                    {searchSuggestions.map((item) => (
-                      <div 
-                        key={`${item.type}-${item.id}`}
-                        className="suggestion-item"
-                        onClick={() => handleSuggestionClick(item.path)}
-                      >
-                        <span className="suggestion-category">{item.category}</span>
-                        <span className="suggestion-title">{item.title}</span>
+                    {searchSuggestions.length > 0 ? (
+                      searchSuggestions.map((item) => (
+                        <div 
+                          key={`${item.type}-${item.id}`}
+                          className="suggestion-item"
+                          onClick={() => handleSuggestionClick(item.path)}
+                        >
+                          <span className="suggestion-category">{item.category}</span>
+                          <span className="suggestion-title">{item.title}</span>
+                          {item.price && (
+                            <span className="suggestion-price">${item.price.toFixed(2)}</span>
+                          )}
+                        </div>
+                      ))
+                    ) : (
+                      <div className="suggestion-item no-results">
+                        No results found for "{searchQuery}"
                       </div>
-                    ))}
+                    )}
                   </div>
                 )}
               </div>

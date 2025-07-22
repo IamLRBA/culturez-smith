@@ -7,163 +7,442 @@ export const SearchProvider = ({ children }) => {
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
-  // All searchable data from your pages
+  // All searchable product data from Shop and Culturez pages
   const searchData = useMemo(() => {
-    // Artists data
-    const artists = [
+    // Products from Shop page
+    const shopProducts = [
+      // Shirts and Tees
       {
         id: 1,
-        title: 'Artist 1',
-        type: 'artist',
-        path: '/artists/1',
-        category: 'Artists',
-        genre: 'Hip Hop',
-        image: '/images/artists/artist1/profile1.jpg'
+        title: 'Basic Cotton Tee',
+        type: 'product',
+        path: '/Shop#shirts-casual',
+        category: 'Shirts and Tees',
+        description: 'Comfortable casual t-shirt made from premium cotton blend',
+        price: 29.99
       },
       {
         id: 2,
-        title: 'Artist 2',
-        type: 'artist',
-        path: '/artists/2',
-        category: 'Artists',
-        genre: 'R&B',
-        image: '/images/artists/artist2/profile2.jpg'
+        title: 'Graphic Print Tee',
+        type: 'product',
+        path: '/Shop#shirts-casual',
+        category: 'Shirts and Tees',
+        description: 'Cotton t-shirt with unique graphic print design',
+        price: 34.99
       },
       {
         id: 3,
-        title: 'Artist 3',
-        type: 'artist',
-        path: '/artists/3',
-        category: 'Artists',
-        genre: 'Afrobeat',
-        image: '/images/artists/artist3/profile3.jpg'
+        title: 'Classic Check Shirt',
+        type: 'product',
+        path: '/Shop#shirts-checked',
+        category: 'Shirts and Tees',
+        description: 'Traditional checked shirt with button-down collar',
+        price: 49.99
       },
       {
         id: 4,
-        title: 'Artist 4',
-        type: 'artist',
-        path: '/artists/4',
-        category: 'Artists',
-        genre: 'Pop',
-        image: '/images/artists/artist4/profile4.jpg'
+        title: 'Denim Shirt',
+        type: 'product',
+        path: '/Shop#shirts-denim',
+        category: 'Shirts and Tees',
+        description: 'Rugged denim shirt with reinforced stitching',
+        price: 54.99
       },
       {
         id: 5,
-        title: 'Artist 5',
-        type: 'artist',
-        path: '/artists/5',
-        category: 'Artists',
-        genre: 'Electronic',
-        image: '/images/artists/artist5/profile5.jpg'
+        title: 'Linen Shirt',
+        type: 'product',
+        path: '/Shop#shirts-gentle',
+        category: 'Shirts and Tees',
+        description: 'Breathable linen shirt for a refined look',
+        price: 59.99
       },
       {
         id: 6,
-        title: 'Artist 6',
-        type: 'artist',
-        path: '/artists/6',
-        category: 'Artists',
-        genre: 'Jazz',
-        image: '/images/artists/artist6/profile6.jpg'
+        title: 'Classic Polo',
+        type: 'product',
+        path: '/Shop#shirts-polo',
+        category: 'Shirts and Tees',
+        description: 'Premium polo shirt with embroidered logo',
+        price: 39.99
+      },
+      {
+        id: 7,
+        title: 'Performance Tee',
+        type: 'product',
+        path: '/Shop#shirts-sports',
+        category: 'Shirts and Tees',
+        description: 'Moisture-wicking sports t-shirt',
+        price: 44.99
+      },
+      {
+        id: 8,
+        title: 'Textured Knit Shirt',
+        type: 'product',
+        path: '/Shop#shirts-textured',
+        category: 'Shirts and Tees',
+        description: 'Unique textured fabric with interesting patterns',
+        price: 64.99
+      },
+      {
+        id: 9,
+        title: 'Vintage Wash Tee',
+        type: 'product',
+        path: '/Shop#shirts-vintage',
+        category: 'Shirts and Tees',
+        description: 'Distressed vintage-style t-shirt',
+        price: 49.99
+      },
+      // Bottoms
+      {
+        id: 10,
+        title: 'Cargo Shorts',
+        type: 'product',
+        path: '/Shop#bottoms-shorts',
+        category: 'Bottoms',
+        description: 'Durable cargo shorts with multiple pockets',
+        price: 49.99
+      },
+      {
+        id: 11,
+        title: 'Denim Shorts',
+        type: 'product',
+        path: '/Shop#bottoms-shorts',
+        category: 'Bottoms',
+        description: 'Classic denim shorts with distressed details',
+        price: 44.99
+      },
+      {
+        id: 12,
+        title: 'Jogger Shorts',
+        type: 'product',
+        path: '/Shop#bottoms-shorts',
+        category: 'Bottoms',
+        description: 'Comfortable jogger shorts with elastic waistband',
+        price: 39.99
+      },
+      {
+        id: 13,
+        title: 'Slim Fit Chinos',
+        type: 'product',
+        path: '/Shop#bottoms-trousers',
+        category: 'Bottoms',
+        description: 'Slim-fit chino pants for a polished look',
+        price: 59.99
+      },
+      {
+        id: 14,
+        title: 'Cargo Pants',
+        type: 'product',
+        path: '/Shop#bottoms-trousers',
+        category: 'Bottoms',
+        description: 'Utility cargo pants with multiple pockets',
+        price: 64.99
+      },
+      {
+        id: 15,
+        title: 'Denim Jeans',
+        type: 'product',
+        path: '/Shop#bottoms-trousers',
+        category: 'Bottoms',
+        description: 'Classic straight-fit denim jeans',
+        price: 69.99
+      },
+      // Coats and Jackets
+      {
+        id: 16,
+        title: 'Classic Bomber',
+        type: 'product',
+        path: '/Shop#coats-bomber',
+        category: 'Coats and Jackets',
+        description: 'Iconic bomber jacket with ribbed cuffs and hem',
+        price: 119.99
+      },
+      {
+        id: 17,
+        title: 'Knit Cardigan',
+        type: 'product',
+        path: '/Shop#coats-cardigan',
+        category: 'Coats and Jackets',
+        description: 'Chunky knit cardigan for layering',
+        price: 89.99
+      },
+      {
+        id: 18,
+        title: 'Denim Jacket',
+        type: 'product',
+        path: '/Shop#coats-denim',
+        category: 'Coats and Jackets',
+        description: 'Timeless denim jacket with button-front closure',
+        price: 99.99
+      },
+      {
+        id: 19,
+        title: 'Biker Jacket',
+        type: 'product',
+        path: '/Shop#coats-leather',
+        category: 'Coats and Jackets',
+        description: 'Premium genuine leather biker jacket',
+        price: 199.99
+      },
+      {
+        id: 20,
+        title: 'Quilted Puffer',
+        type: 'product',
+        path: '/Shop#coats-puffer',
+        category: 'Coats and Jackets',
+        description: 'Warm quilted puffer jacket for cold weather',
+        price: 149.99
+      },
+      {
+        id: 21,
+        title: 'Utility Jacket',
+        type: 'product',
+        path: '/Shop#coats-workwear',
+        category: 'Coats and Jackets',
+        description: 'Durable workwear jacket with multiple pockets',
+        price: 109.99
+      },
+      {
+        id: 22,
+        title: 'Lightweight Windbreaker',
+        type: 'product',
+        path: '/Shop#coats-windbreaker',
+        category: 'Coats and Jackets',
+        description: 'Water-resistant windbreaker jacket',
+        price: 79.99
+      },
+      {
+        id: 23,
+        title: 'Quilted Vest',
+        type: 'product',
+        path: '/Shop#coats-vests',
+        category: 'Coats and Jackets',
+        description: 'Warm quilted vest for layering',
+        price: 89.99
+      },
+      {
+        id: 24,
+        title: 'Cable Knit Sweater',
+        type: 'product',
+        path: '/Shop#coats-sweater',
+        category: 'Coats and Jackets',
+        description: 'Classic cable knit sweater',
+        price: 79.99
+      },
+      {
+        id: 25,
+        title: 'Field Jacket',
+        type: 'product',
+        path: '/Shop#coats-jacket',
+        category: 'Coats and Jackets',
+        description: 'Military-inspired field jacket',
+        price: 119.99
+      },
+      {
+        id: 26,
+        title: 'Pullover Hoodie',
+        type: 'product',
+        path: '/Shop#coats-hoodie',
+        category: 'Coats and Jackets',
+        description: 'Comfortable cotton pullover hoodie',
+        price: 69.99
+      },
+      // Footwear
+      {
+        id: 27,
+        title: 'Canvas Sneakers',
+        type: 'product',
+        path: '/Shop#footwear-casual',
+        category: 'Footwear',
+        description: 'Classic canvas sneakers for everyday wear',
+        price: 59.99
+      },
+      {
+        id: 28,
+        title: 'Leather Loafers',
+        type: 'product',
+        path: '/Shop#footwear-gentle',
+        category: 'Footwear',
+        description: 'Premium leather loafers for a refined look',
+        price: 89.99
+      },
+      {
+        id: 29,
+        title: 'High-Top Sneakers',
+        type: 'product',
+        path: '/Shop#footwear-streetwear',
+        category: 'Footwear',
+        description: 'Stylish high-top sneakers with cushioned soles',
+        price: 99.99
+      },
+      {
+        id: 30,
+        title: 'Leather Sandals',
+        type: 'product',
+        path: '/Shop#footwear-sandals',
+        category: 'Footwear',
+        description: 'Comfortable leather sandals for warm weather',
+        price: 49.99
+      },
+      // Accessories
+      {
+        id: 31,
+        title: 'Leather Backpack',
+        type: 'product',
+        path: '/Shop#accessories-bags',
+        category: 'Accessories',
+        description: 'Stylish leather backpack with multiple compartments',
+        price: 129.99
+      },
+      {
+        id: 32,
+        title: 'Shades & Sunglasses',
+        type: 'product',
+        path: '/Shop#accessories-eyewear',
+        category: 'Accessories',
+        description: 'Classic aviator sunglasses with UV protection',
+        price: 79.99
+      },
+      {
+        id: 33,
+        title: 'Wool Beanie',
+        type: 'product',
+        path: '/Shop#accessories-headwear',
+        category: 'Accessories',
+        description: 'Warm wool beanie for cold weather',
+        price: 29.99
+      },
+      {
+        id: 34,
+        title: 'Watches',
+        type: 'product',
+        path: '/Shop#accessories-jewelry',
+        category: 'Accessories',
+        description: 'Handcrafted leather bracelet with metal details',
+        price: 39.99
+      },
+      {
+        id: 35,
+        title: 'Bracelets',
+        type: 'product',
+        path: '/Shop#accessories-jewelry',
+        category: 'Accessories',
+        description: 'Handcrafted leather bracelet with metal details',
+        price: 39.99
+      },
+      {
+        id: 36,
+        title: 'Necklaces',
+        type: 'product',
+        path: '/Shop#accessories-jewelry',
+        category: 'Accessories',
+        description: 'Handcrafted leather bracelet with metal details',
+        price: 39.99
+      },
+      {
+        id: 37,
+        title: 'Rings',
+        type: 'product',
+        path: '/Shop#accessories-jewelry',
+        category: 'Accessories',
+        description: 'Handcrafted leather bracelet with metal details',
+        price: 39.99
+      },
+      {
+        id: 38,
+        title: 'Fashion Magazine',
+        type: 'product',
+        path: '/Shop#accessories-literature',
+        category: 'Accessories',
+        description: 'Latest issue of our exclusive fashion magazine',
+        price: 14.99
+      },
+      // Underwear
+      {
+        id: 39,
+        title: 'Cotton Boxer Briefs',
+        type: 'product',
+        path: '/Shop#underwear-boxers',
+        category: 'Underwear',
+        description: 'Breathable cotton boxer briefs for all-day comfort',
+        price: 24.99
+      },
+      {
+        id: 40,
+        title: 'Cotton Singlet',
+        type: 'product',
+        path: '/Shop#underwear-singlets',
+        category: 'Underwear',
+        description: 'Soft cotton singlet for layering',
+        price: 19.99
+      },
+      {
+        id: 41,
+        title: 'Premium Cotton Socks',
+        type: 'product',
+        path: '/Shop#underwear-socks',
+        category: 'Underwear',
+        description: 'Soft cotton blend socks with reinforced heels',
+        price: 14.99
       }
     ];
 
-    // Releases data
-    const releases = [
+    // Products from Culturez page
+    const culturezProducts = [
       {
-        id: 1,
-        title: 'New Single',
-        type: 'release',
-        path: '/releases/1',
-        category: 'Releases',
-        artist: 'Artist 1',
-        cover: '/images/artists/artist1/album1.jpg',
-        description: 'Latest single from Artist 1'
+        id: 42,
+        title: 'T-Shirt',
+        type: 'product',
+        path: '/Culturez#shirts',
+        category: 'Culturez',
+        description: 'Basic t-shirt from Culturez collection',
+        price: 29.99
       },
       {
-        id: 2,
-        title: 'Latest Album',
-        type: 'release',
-        path: '/releases/2',
-        category: 'Releases',
-        artist: 'Artist 2',
-        cover: '/images/artists/artist2/album2.jpg',
-        description: 'Highly anticipated album from Artist 2'
+        id: 43,
+        title: 'Shirt',
+        type: 'product',
+        path: '/Culturez#shirts',
+        category: 'Culturez',
+        description: 'Stylish shirt from Culturez collection',
+        price: 39.99
       },
       {
-        id: 3,
-        title: 'Summer Vibes EP',
-        type: 'release',
-        path: '/releases/3',
-        category: 'Releases',
-        artist: 'Artist 3',
-        cover: '/images/artists/artist3/album3.jpg',
-        description: 'Perfect for your summer playlist'
+        id: 44,
+        title: 'Shorts',
+        type: 'product',
+        path: '/Culturez#pants',
+        category: 'Culturez',
+        description: 'Comfortable shorts from Culturez collection',
+        price: 49.99
       },
       {
-        id: 4,
-        title: 'Midnight Sessions',
-        type: 'release',
-        path: '/releases/4',
-        category: 'Releases',
-        artist: 'Artist 4',
-        cover: '/images/artists/artist4/album4.jpg',
-        description: 'Recorded late at night'
+        id: 45,
+        title: 'Trouser',
+        type: 'product',
+        path: '/Culturez#pants',
+        category: 'Culturez',
+        description: 'Classic trousers from Culturez collection',
+        price: 59.99
       },
       {
-        id: 5,
-        title: 'Urban Nights',
-        type: 'release',
-        path: '/releases/5',
-        category: 'Releases',
-        artist: 'Artist 5',
-        cover: '/images/artists/artist5/album5.jpg',
-        description: 'Urban-inspired tracks'
+        id: 46,
+        title: 'Sweater',
+        type: 'product',
+        path: '/Culturez#sweaters',
+        category: 'Culturez',
+        description: 'Warm sweater from Culturez collection',
+        price: 129.99
       },
       {
-        id: 6,
-        title: 'Acoustic Sessions',
-        type: 'release',
-        path: '/releases/6',
-        category: 'Releases',
-        artist: 'Artist 6',
-        cover: '/images/artists/artist6/album6.jpg',
-        description: 'Stripped-down acoustic versions'
-      }
-    ];
-
-    // Studio services data
-    const studioServices = [
-      {
-        id: 1,
-        title: 'Audio Services',
-        type: 'studio',
-        path: '/studio/services',
-        category: 'Studio',
-        description: 'Professional recording sessions with our expert engineers'
-      },
-      {
-        id: 2,
-        title: 'Beat Store',
-        type: 'studio',
-        path: '/studio/beat-store',
-        category: 'Studio',
-        description: 'Purchase high-quality beats from our producers'
-      },
-      {
-        id: 3,
-        title: 'Studio Booking',
-        type: 'studio',
-        path: '/studio/booking',
-        category: 'Studio',
-        description: 'Reserve your time in our professional recording space'
-      },
-      {
-        id: 4,
-        title: 'Studio Gallery',
-        type: 'studio',
-        path: '/studio/gallery',
-        category: 'Studio',
-        description: 'Take a virtual tour of our facilities'
+        id: 47,
+        title: 'Hoodie',
+        type: 'product',
+        path: '/Culturez#sweaters',
+        category: 'Culturez',
+        description: 'Comfortable hoodie from Culturez collection',
+        price: 89.99
       }
     ];
 
@@ -179,27 +458,27 @@ export const SearchProvider = ({ children }) => {
       },
       {
         id: 2,
-        title: 'Artists',
+        title: 'Shop',
         type: 'page',
-        path: '/artists',
+        path: '/Shop',
         category: 'Pages',
-        description: 'Discover our talented artists'
+        description: 'Browse our full product collection'
       },
       {
         id: 3,
-        title: 'Releases',
+        title: 'Culturez',
         type: 'page',
-        path: '/releases',
+        path: '/Culturez',
         category: 'Pages',
-        description: 'Explore our music catalog'
+        description: 'Explore our Culturez product line'
       },
       {
         id: 4,
-        title: 'Studio',
+        title: 'Gallery',
         type: 'page',
-        path: '/studio',
+        path: '/Gallery',
         category: 'Pages',
-        description: 'Our recording facilities'
+        description: 'View our photo gallery'
       },
       {
         id: 5,
@@ -211,7 +490,7 @@ export const SearchProvider = ({ children }) => {
       }
     ];
 
-    return [...artists, ...releases, ...studioServices, ...pages];
+    return [...shopProducts, ...culturezProducts, ...pages];
   }, []);
 
   const updateSuggestions = (query) => {
@@ -222,8 +501,6 @@ export const SearchProvider = ({ children }) => {
 
     const filtered = searchData.filter(item =>
       item.title.toLowerCase().includes(query.toLowerCase()) ||
-      (item.artist && item.artist.toLowerCase().includes(query.toLowerCase())) ||
-      (item.genre && item.genre.toLowerCase().includes(query.toLowerCase())) ||
       item.category.toLowerCase().includes(query.toLowerCase()) ||
       item.description.toLowerCase().includes(query.toLowerCase())
     );
