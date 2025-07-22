@@ -211,7 +211,7 @@
 
 .products-category-filter {
   padding: var(--spacing-xs) var(--spacing-md);
-  border: 1px solid var(--tertiary-color);
+  border: 2px solid var(--tertiary-color);
   border-radius: var(--border-radius-md);
   background: transparent;
   color: var(--primary-color);
@@ -221,8 +221,8 @@
 }
 
 .products-category-filter:hover {
-  border-color: var(--secondary-color);
-  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  transform: scale(1.1);
 }
 
 .products-category-filter.active {
