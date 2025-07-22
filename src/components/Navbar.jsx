@@ -84,9 +84,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          <img src="/images/logo.png" alt="Tizzy Camp Logo" />
-        </Link>
+        <Link to="/" className="navbar-culturez-logo">
+  <span>CULTUREZ</span>
+</Link>
 
         <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
@@ -109,7 +109,7 @@ const Navbar = () => {
               <div className="search-input-wrapper">
                 <input
                   type="text"
-                  placeholder="Search artists, releases, studio..."
+                  placeholder="Search products"
                   value={searchQuery}
                   onChange={handleSearchChange}
                   className="navbar-search-input"
