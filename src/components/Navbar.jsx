@@ -79,7 +79,7 @@ const Navbar = () => {
     { path: '/about', name: 'About', icon: <HiOutlineUsers /> },
     { path: '/Shop', name: 'Shop', icon: <HiOutlineShoppingCart /> },
     { path: '/Gallery', name: 'Gallery', icon: <HiOutlinePhotograph /> },
-    { path: '/Culturez', name: 'Culturez', icon: <HiOutlineShoppingBag /> },
+    { path: '/Culturez', name: 'Culturez®', icon: <HiOutlineShoppingBag /> },
     { path: '/contact', name: 'Contact', icon: <HiOutlineMail /> },
   ];
 

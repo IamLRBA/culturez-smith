@@ -12,8 +12,8 @@ const PrivacyPolicy = () => {
             
             <h2>1. Introduction</h2>
             <p>
-              Welcome to Tizzy Camp Music Label ("us", "we", or "our"). We operate the 
-              tizzycamp.com website (the "Service").
+              Welcome to Culturez ("us", "we", or "our"). We operate the 
+              culturez.com website (the "Service").
             </p>
             <p>
               This page informs you of our policies regarding the collection, use, and 
@@ -32,8 +32,7 @@ const PrivacyPolicy = () => {
             <p>
               While using our Service, we may ask you to provide us with certain personally 
               identifiable information that can be used to contact or identify you 
-              ("Personal Data"). Personally identifiable information may include, but is 
-              not limited to:
+              ("Personal Data"). Personally identifiable information may include, but is not limited to:
             </p>
             <ul>
               <li>Email address</li>
@@ -43,7 +42,7 @@ const PrivacyPolicy = () => {
             </ul>
             
             <h2>3. Use of Data</h2>
-            <p>Tizzy Camp Music Label uses the collected data for various purposes:</p>
+            <p>Culturez uses the collected data for various purposes:</p>
             <ul>
               <li>To provide and maintain our Service</li>
               <li>To notify you about changes to our Service</li>
@@ -77,8 +76,8 @@ const PrivacyPolicy = () => {
               If you have any questions about this Privacy Policy, please contact us:
             </p>
             <ul>
-              <li>By email: privacy@tizzycamp.com</li>
-              <li>By visiting this page on our website: tizzycamp.com/contact</li>
+              <li>By email: privacy@culturez.com</li>
+              <li>By visiting this page on our website: culturez.com/contact</li>
             </ul>
           </div>
         </div>

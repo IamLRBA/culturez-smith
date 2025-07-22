@@ -28,39 +28,39 @@ const Social = ({ size = 'md', color = 'default', direction = 'horizontal' }) =>
 
   return (
     <div className={`social-links ${direction === 'vertical' ? 'social-vertical' : ''}`}>
-      <a href="https://facebook.com/tizzycamp" target="_blank" rel="noopener noreferrer" 
+      <a href="https://facebook.com/culturez" target="_blank" rel="noopener noreferrer" 
          className={`social-link ${sizeClasses[size]} ${colorClasses[color]}`}>
         <FaFacebook />
       </a>
-      <a href="https://twitter.com/tizzycamp" target="_blank" rel="noopener noreferrer" 
+      <a href="https://twitter.com/culturez" target="_blank" rel="noopener noreferrer" 
          className={`social-link ${sizeClasses[size]} ${colorClasses[color]}`}>
         <FaTwitter />
       </a>
-      <a href="https://instagram.com/tizzycamp" target="_blank" rel="noopener noreferrer" 
+      <a href="https://instagram.com/culturez" target="_blank" rel="noopener noreferrer" 
          className={`social-link ${sizeClasses[size]} ${colorClasses[color]}`}>
         <FaInstagram />
       </a>
-      <a href="https://youtube.com/tizzycamp" target="_blank" rel="noopener noreferrer" 
+      <a href="https://youtube.com/culturez" target="_blank" rel="noopener noreferrer" 
          className={`social-link ${sizeClasses[size]} ${colorClasses[color]}`}>
         <FaYoutube />
       </a>
-      <a href="https://open.spotify.com/artist/tizzycamp" target="_blank" rel="noopener noreferrer" 
+      <a href="https://open.spotify.com/artist/culturez" target="_blank" rel="noopener noreferrer" 
          className={`social-link ${sizeClasses[size]} ${colorClasses[color]}`}>
         <FaSpotify />
       </a>
-      <a href="https://music.apple.com/artist/tizzycamp" target="_blank" rel="noopener noreferrer" 
+      <a href="https://music.apple.com/artist/culturez" target="_blank" rel="noopener noreferrer" 
          className={`social-link ${sizeClasses[size]} ${colorClasses[color]}`}>
         <FaApple />
       </a>
-      <a href="https://soundcloud.com/tizzycamp" target="_blank" rel="noopener noreferrer" 
+      <a href="https://soundcloud.com/culturez" target="_blank" rel="noopener noreferrer" 
          className={`social-link ${sizeClasses[size]} ${colorClasses[color]}`}>
         <FaSoundcloud />
       </a>
-      <a href="https://deezer.com/artist/tizzycamp" target="_blank" rel="noopener noreferrer" 
+      <a href="https://deezer.com/artist/culturez" target="_blank" rel="noopener noreferrer" 
          className={`social-link ${sizeClasses[size]} ${colorClasses[color]}`}>
         <FaDeezer />
       </a>
-      <a href="https://tidal.com/artist/tizzycamp" target="_blank" rel="noopener noreferrer" 
+      <a href="https://tidal.com/artist/culturez" target="_blank" rel="noopener noreferrer" 
          className={`social-link ${sizeClasses[size]} ${colorClasses[color]}`}>
         <SiTidal />
       </a>

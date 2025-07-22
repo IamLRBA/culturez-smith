@@ -25,7 +25,10 @@ import {
   HiOutlineMail,
   HiOutlineShoppingBag,
   HiOutlinePhotograph,
-  HiOutlineShoppingCart
+  HiOutlineShoppingCart,
+  HiOutlineNewspaper,
+  HiOutlineShieldCheck,
+  HiOutlineDocumentText
 } from 'react-icons/hi';
 
 import './Footer.css';
@@ -48,7 +51,7 @@ const Footer = () => {
         <div className="footer-section brand-section">
           <div className="footer-logo">
             <FontAwesomeIcon icon={faMusic} className="logo-icon" />
-            <h3>Culturez</h3>
+            <h3>Culturez®</h3>
           </div>
           <p className="brand-tagline">
             A premium fashion brand blending urban culture with contemporary style.
@@ -82,8 +85,9 @@ const Footer = () => {
             <li><Link to="/about"><HiOutlineUsers className="link-icon" /> About Us</Link></li>
             <li><Link to="/Shop"><HiOutlineShoppingCart className="link-icon" /> Shop</Link></li>
             <li><Link to="/Gallery"><HiOutlinePhotograph className="link-icon" /> Gallery</Link></li>
-            <li><Link to="/Culturez"><HiOutlineShoppingBag className="link-icon" /> Culturez</Link></li>
+            <li><Link to="/Culturez"><HiOutlineShoppingBag className="link-icon" /> Culturez®</Link></li>
             <li><Link to="/contact"><HiOutlineMail className="link-icon" /> Contact</Link></li>
+            <li><Link to="/Blog"><HiOutlineNewspaper className="link-icon" /> Blog</Link></li>
           </ul>
         </div>
         
@@ -91,9 +95,9 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-section-title">Legal</h3>
           <ul className="footer-links">
-            <li><Link to="/privacy-policy"><FontAwesomeIcon icon={faShieldAlt} className="link-icon" /> Privacy Policy</Link></li>
-            <li><Link to="/terms"><FontAwesomeIcon icon={faFileAlt} className="link-icon" /> Terms of Service</Link></li>
-          </ul>
+  <li><Link to="/privacy-policy"><HiOutlineShieldCheck className="link-icon" /> Privacy Policy</Link></li>
+  <li><Link to="/terms"><HiOutlineDocumentText className="link-icon" /> Terms of Service</Link></li>
+</ul>
           
           
           
@@ -103,7 +107,7 @@ const Footer = () => {
       {/* Copyright Section */}
       <div className="footer-bottom">
         <p className="copyright">
-          &copy; {new Date().getFullYear()} Culturez by Smith. All rights reserved.
+          &copy; {new Date().getFullYear()} Culturez® by Smith. All rights reserved.
         </p>
         <p className="copyright">Designed by - LRBA</p>
       </div>

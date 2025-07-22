@@ -268,7 +268,7 @@ const Contact = () => {
                 <h3>Email</h3>
                 <p>culturezbysmith.com</p>
                 <a 
-                  href="mailto:info@tizzycamp.com" 
+                  href="mailto:info@culturez.com" 
                   className={`contact-email-link contact-${cardColors.email}-link`}
                 >
                   Send Email
