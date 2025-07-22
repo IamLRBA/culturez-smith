@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { FaShoppingCart, FaTimes, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from '../../components/ProductCard';
+import { Link } from 'react-router-dom';
 import './Culturez.css';
 
 const Culturez = () => {
@@ -127,13 +128,13 @@ const Culturez = () => {
   };
 
   return (
-    <div className="order-page" ref={pageRef}>
-      <div className="order-background"></div>
+    <div className="culturez-page" ref={pageRef}>
+      <div className="culturez-background"></div>
       
       {bubbles.map((bubble) => (
         <motion.div
           key={`bubble-${bubble.id}`}
-          className="order-bubble"
+          className="culturez-bubble"
           style={{
             width: `${bubble.size}px`,
             height: `${bubble.size}px`,
@@ -151,38 +152,64 @@ const Culturez = () => {
         />
       ))}
 
-      <section className="order-section">
-        <div className="order-container">
+      <section className="culturez-section">
+        <div className="culturez-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="order-header"
+            className="culturez-header"
           >
-            <h2 className="order-title">Culturez Products</h2>
-            <p className="order-subtitle">
+            <motion.h2 
+              className="culturez-title"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <motion.span
+                className="culturez-highlight"
+                initial={{ color: '#1b741b' }}
+                animate={{
+                  color: ['#1b741b', '#3a9e3a', '#5cc75c', '#3a9e3a', '#1b741b'],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: 'linear'
+                }}
+              >
+                Culturez
+              </motion.span> Products
+            </motion.h2>
+            <p className="culturez-subtitle">
               Select items from our collection and place your order
             </p>
+            <div className="culturez-cta-container">
+              <Link to="/about" className="culturez-about-cta-link">About Culturez</Link>
+              <Link to="/contact" className="culturez-contact-cta-link">Contact Us</Link>
+            </div>
           </motion.div>
           
           <motion.div 
-            className="order-category-filters"
+            className="culturez-category-filters"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
             {categories.map(category => (
-              <button
+              <motion.button
                 key={category}
-                className={`order-category-filter ${activeFilter === category ? 'active' : ''}`}
+                className={`culturez-category-filter ${activeFilter === category ? 'active' : ''}`}
                 onClick={() => setActiveFilter(category)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {category === 'all' ? 'All Products' : category}
-              </button>
+              </motion.button>
             ))}
           </motion.div>
           
-          <div className="order-products-grid">
+          <div className="culturez-products-grid">
             {filteredProducts.map(product => (
               <ProductCard 
                 key={product.id} 
@@ -196,22 +223,22 @@ const Culturez = () => {
         </div>
       </section>
       
-      <section className="order-cart-section" ref={cartRef}>
-        <div className="order-container">
+      <section className="culturez-cart-section" ref={cartRef}>
+        <div className="culturez-container">
           <AnimatePresence>
             {(isCartOpen || cart.length > 0) && (
               <motion.div 
-                className="order-cart-container"
+                className="culturez-cart-container"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="order-cart-header">
+                <div className="culturez-cart-header">
                   <h3>Your Cart ({cart.length})</h3>
                   {isCartOpen && (
                     <button 
-                      className="order-cart-close"
+                      className="culturez-cart-close"
                       onClick={() => setIsCartOpen(false)}
                     >
                       <FaTimes />
@@ -219,31 +246,37 @@ const Culturez = () => {
                   )}
                 </div>
                 
-                <div className="order-cart-items">
+                <div className="culturez-cart-items">
                   {cart.length > 0 ? (
                     <>
                       {cart.map(item => (
-                        <div key={`${item.id}-${item.size}-${item.color}`} className="order-cart-item">
-                          <div className="order-cart-item-image">
+                        <motion.div 
+                          key={`${item.id}-${item.size}-${item.color}`} 
+                          className="culturez-cart-item"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="culturez-cart-item-image">
                             <img src={item.images[0]} alt={item.title} />
                           </div>
-                          <div className="order-cart-item-info">
+                          <div className="culturez-cart-item-info">
                             <h4>{item.title}</h4>
                             <p>{item.category} • Size: {item.size}, Color: {item.color}</p>
-                            <p className="order-cart-item-price">${item.finalPrice.toFixed(2)}</p>
+                            <p className="culturez-cart-item-price">${item.finalPrice.toFixed(2)}</p>
                           </div>
                           <button 
-                            className="order-remove-from-cart"
+                            className="culturez-remove-from-cart"
                             onClick={() => removeFromCart(item.id)}
                           >
                             ×
                           </button>
-                        </div>
+                        </motion.div>
                       ))}
                       
-                      <div className="order-cart-navigation">
+                      <div className="culturez-cart-navigation">
                         <button 
-                          className="order-continue-shopping"
+                          className="culturez-continue-shopping"
                           onClick={() => {
                             setIsCartOpen(false);
                             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -252,13 +285,13 @@ const Culturez = () => {
                           <FaArrowLeft /> Continue Shopping
                         </button>
                         
-                        <div className="order-cart-total">
+                        <div className="culturez-cart-total">
                           <span>Total:</span>
                           <span>${calculateTotal()}</span>
                         </div>
                         
                         <button 
-                          className="order-checkout-btn"
+                          className="culturez-checkout-btn"
                           onClick={handleCheckout}
                         >
                           Proceed to Checkout <FaArrowRight />
@@ -266,10 +299,10 @@ const Culturez = () => {
                       </div>
                     </>
                   ) : (
-                    <div className="order-cart-empty">
+                    <div className="culturez-cart-empty">
                       <p>Your cart is empty</p>
                       <button 
-                        className="order-continue-shopping"
+                        className="culturez-continue-shopping"
                         onClick={() => setIsCartOpen(false)}
                       >
                         <FaArrowLeft /> Browse Products
@@ -283,9 +316,15 @@ const Culturez = () => {
         </div>
       </section>
       
+      <div className="culturez-bottom-cta">
+        <Link to="/shop" className="culturez-shop-link">
+          Purchase Our Other Products <FaArrowRight />
+        </Link>
+      </div>
+      
       {cart.length > 0 && !isCartOpen && (
         <motion.button 
-          className="order-cart-button"
+          className="culturez-cart-button"
           onClick={() => {
             setIsCartOpen(true);
             setTimeout(() => {
@@ -294,54 +333,55 @@ const Culturez = () => {
           }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
         >
           <FaShoppingCart />
-          <span className="order-cart-count">{cart.length}</span>
+          <span className="culturez-cart-count">{cart.length}</span>
         </motion.button>
       )}
       
       <AnimatePresence>
         {checkoutOpen && (
           <motion.div 
-            className="order-checkout-modal"
+            className="culturez-checkout-modal"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="order-checkout-content">
+            <div className="culturez-checkout-content">
               <button 
-                className="order-checkout-close"
+                className="culturez-checkout-close"
                 onClick={() => setCheckoutOpen(false)}
               >
                 <FaTimes />
               </button>
               
-              <div className="order-checkout-scrollable">
+              <div className="culturez-checkout-scrollable">
                 <h3>Complete Your Purchase</h3>
                 
-                <div className="order-summary">
+                <div className="culturez-summary">
                   <h4>Order Summary</h4>
                   <ul>
                     {orderDetails.items.map(item => (
                       <li key={`${item.id}-${item.size}-${item.color}`}>
                         <div>
                           <span>{item.title}</span>
-                          <span className="order-item-details">Size: {item.size}, Color: {item.color}</span>
+                          <span className="culturez-item-details">Size: {item.size}, Color: {item.color}</span>
                         </div>
                         <span>${item.finalPrice.toFixed(2)}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="order-total">
+                  <div className="culturez-total">
                     <span>Total:</span>
                     <span>${orderDetails.total}</span>
                   </div>
                 </div>
                 
-                <div className="order-payment-methods">
+                <div className="culturez-payment-methods">
                   <h4>Payment Method</h4>
-                  <div className="order-payment-options">
+                  <div className="culturez-payment-options">
                     <label className={paymentMethod === 'mobileMoney' ? 'active' : ''}>
                       <input 
                         type="radio" 
@@ -365,9 +405,9 @@ const Culturez = () => {
                   </div>
                   
                   {paymentMethod === 'mobileMoney' && (
-                    <div className="order-mobile-money">
+                    <div className="culturez-mobile-money">
                       <p>Pay via Mobile Money to:</p>
-                      <div className="order-merchant-info">
+                      <div className="culturez-merchant-info">
                         <div>
                           <span>Merchant Code:</span>
                           <strong>CULTUREZ</strong>
@@ -377,17 +417,17 @@ const Culturez = () => {
                           <strong>+256 XXX XXX XXX</strong>
                         </div>
                       </div>
-                      <p className="order-payment-note">
+                      <p className="culturez-payment-note">
                         After payment, send the transaction details to our WhatsApp for verification.
                       </p>
                     </div>
                   )}
                   
                   {paymentMethod === 'card' && (
-                    <div className="order-card-payment">
-                      <div className="order-card-form">
+                    <div className="culturez-card-payment">
+                      <div className="culturez-card-form">
                         <input type="text" placeholder="Card Number" />
-                        <div className="order-card-details">
+                        <div className="culturez-card-details">
                           <input type="text" placeholder="MM/YY" />
                           <input type="text" placeholder="CVV" />
                         </div>
@@ -398,15 +438,15 @@ const Culturez = () => {
                 </div>
               </div>
               
-              <div className="order-checkout-buttons">
+              <div className="culturez-checkout-buttons">
                 <button 
-                  className="order-cancel-payment"
+                  className="culturez-cancel-payment"
                   onClick={() => setCheckoutOpen(false)}
                 >
                   Cancel
                 </button>
                 <button 
-                  className="order-confirm-payment"
+                  className="culturez-confirm-payment"
                   onClick={handlePayment}
                 >
                   Confirm Payment
