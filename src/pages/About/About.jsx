@@ -59,7 +59,7 @@ const About = () => {
       role: 'Founder & CEO',
       icon: <HiCrown />,  
       image: '/images/team/ceo.jpg',
-      extendedBio: 'With a background in fashion design and business strategy, our CEO has guided Culturez from a small boutique to a respected name in the industry. Their passion for urban culture and innovative approach to contemporary style has been instrumental in our success.',
+      extendedBio: 'With a background in fashion design and business strategy, our CEO has guided Culturez® from a small boutique to a respected name in the industry. His passion for urban culture and innovative approach to contemporary style has been instrumental in our success.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -180,7 +180,7 @@ const About = () => {
         <div className="about-hero-content">
           <h1 className="about-hero-title">
             <span className="about-title-part">About</span>
-            <span className="about-title-part">Culturez</span>
+            <span className="about-title-part">Culturez®</span>
           </h1>
           <p className="about-hero-subtitle">Where Urban Culture Meets Contemporary Style</p>
         </div>
@@ -196,7 +196,7 @@ const About = () => {
             <div className="about-history-text about-slide-in-left">
               <h3>The Beginning</h3>
               <p>
-                Culturez was founded in 2015 with a clear vision: to create a premium fashion brand that blends urban culture with contemporary style. What started as a small boutique has grown into a recognized name in fashion.
+                Culturez® was founded in 2015 with a clear vision: to create a premium fashion brand that blends urban culture with contemporary style. What started as a small boutique has grown into a recognized name in fashion.
               </p>
               <h3>Our Mission</h3>
               <p>
