@@ -273,7 +273,7 @@ const videos = [
               transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse' }}
               className="highlight-word"
             >
-              Culturez®
+              Our
             </motion.span>{' '}
             <motion.span
               initial={{ color: 'var(--white)' }}

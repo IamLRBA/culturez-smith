@@ -178,14 +178,14 @@ const Culturez = () => {
                   ease: 'linear'
                 }}
               >
-                Culturez®
+                Our
               </motion.span> Products
             </motion.h2>
             <p className="culturez-subtitle">
               Select items from our collection and place your order
             </p>
             <div className="culturez-cta-container">
-              <Link to="/about" className="culturez-about-cta-link">About Culturez</Link>
+              <Link to="/about" className="culturez-about-cta-link">About Culturez®</Link>
               <Link to="/contact" className="culturez-contact-cta-link">Contact Us</Link>
             </div>
           </motion.div>
