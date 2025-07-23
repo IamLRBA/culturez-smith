@@ -306,6 +306,25 @@
   font-weight: bold;
 }
 
+/* Value Icon Styles */
+.about-value-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.about-value-card h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.5rem;
+}
+
 /* Team Section */
 .about-team-section {
   background: linear-gradient(135deg, rgba(0, 179, 69, 0.2), rgba(0, 0, 0, 0.8));

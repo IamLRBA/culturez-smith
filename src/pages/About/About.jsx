@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  FaFacebook, FaTwitter, FaInstagram, FaLinkedin, 
-  FaCrown, FaHeadphones, FaChartLine, FaMusic, FaMicrophone 
-} from 'react-icons/fa';
+  HiOutlineUserCircle as HiCrown,  
+  HiOutlineScissors,
+  HiOutlineChartBar,               
+  HiOutlineShoppingBag,
+  HiOutlineUsers,                  
+  HiOutlineLightBulb,
+  HiOutlineShieldCheck,
+  HiOutlineStar,
+  HiOutlineHeart
+} from 'react-icons/hi2';
 import CountUp from 'react-countup';
 import TeamMemberCard from '../../components/TeamMemberCard';
 import './About.css';
@@ -48,9 +55,9 @@ const About = () => {
   const teamMembers = [
     {
       id: 1,
-      name: 'CEO Name',
+      name: 'SMITH',
       role: 'Founder & CEO',
-      icon: <FaCrown />,
+      icon: <HiCrown />,  
       image: '/images/team/ceo.jpg',
       extendedBio: 'With a background in fashion design and business strategy, our CEO has guided Culturez from a small boutique to a respected name in the industry. Their passion for urban culture and innovative approach to contemporary style has been instrumental in our success.',
       social: {
@@ -62,11 +69,11 @@ const About = () => {
     },
     {
       id: 2,
-      name: 'Team Member 1',
+      name: 'DEIVY',
       role: 'Head of Design',
-      icon: <FaHeadphones />,
-      image: '/images/team/member1.jpg',
-      extendedBio: 'With a decade of experience in fashion design, our Head of Design has an uncanny ability to spot emerging trends. They work closely with our team to refine collections and develop unique style identities.',
+      icon: <HiOutlineScissors />,
+      image: '/images/team/member2.jpg',
+      extendedBio: 'With a decade of experience in fashion design, our Head of Design has an uncanny ability to spot emerging trends. He works closely with the team to refine collections and develop unique style identities.',
       social: {
         facebook: '#',
         twitter: '#',
@@ -78,8 +85,8 @@ const About = () => {
       id: 3,
       name: 'Team Member 2',
       role: 'Marketing Director',
-      icon: <FaChartLine />,
-      image: '/images/team/member2.jpg',
+      icon: <HiOutlineChartBar />,  
+      image: '/images/team/member1.jpg',
       extendedBio: 'Our Marketing Director combines data-driven strategies with creative storytelling to build compelling narratives around our brand. With expertise in digital marketing, they ensure our collections reach fashion-forward audiences effectively.',
       social: {
         facebook: '#',
@@ -92,7 +99,7 @@ const About = () => {
       id: 4,
       name: 'Team Member 3',
       role: 'Retail Manager',
-      icon: <FaMusic />,
+      icon: <HiOutlineShoppingBag />,
       image: '/images/team/member3.jpg',
       extendedBio: 'With years of experience in high-end retail, our Retail Manager maintains our premium shopping experience. Their expertise in customer service is matched only by their deep knowledge of contemporary fashion.',
       social: {
@@ -106,7 +113,7 @@ const About = () => {
       id: 5,
       name: 'Team Member 4',
       role: 'Brand Relations',
-      icon: <FaMicrophone />,
+      icon: <HiOutlineUsers />,  
       image: '/images/team/member4.jpg',
       extendedBio: 'Our Brand Relations specialist fosters partnerships with influencers and collaborators. With a background in urban fashion culture, they build bridges between our brand and the community we serve.',
       social: {
@@ -122,24 +129,28 @@ const About = () => {
     {
       id: 1,
       title: 'Integrity',
+      icon: <HiOutlineShieldCheck />,
       summary: 'We conduct business with honesty and transparency.',
       details: 'Every collection we create and every relationship we build is grounded in ethical practices. We believe that long-term success comes from doing what is right, not just what is profitable.'
     },
     {
       id: 2,
       title: 'Innovation',
+      icon: <HiOutlineLightBulb />,
       summary: 'We embrace creativity and forward-thinking design.',
       details: 'In an ever-changing fashion landscape, we stay ahead by continuously exploring new ideas, materials, and silhouettes. We challenge our team to push boundaries and redefine urban style.'
     },
     {
       id: 3,
       title: 'Excellence',
+      icon: <HiOutlineStar />,
       summary: 'We strive for the highest quality in everything we do.',
       details: 'From fabric selection to final stitching, we maintain rigorous standards. We invest in premium materials and craftsmanship to ensure our garments meet the highest benchmarks.'
     },
     {
       id: 4,
       title: 'Community',
+      icon: <HiOutlineHeart />,
       summary: 'We celebrate urban culture and its influence on fashion.',
       details: 'Style thrives in community. We collaborate with local artists and cultural influencers to create collections that authentically represent the streets that inspire us.'
     }
@@ -231,33 +242,36 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="about-section about-values-section">
-        <div className="about-container">
-          <h2 className="about-section-title">
-            <span>Our Values</span>
-          </h2>
-          <div className="about-values-grid">
-            {values.map((value) => (
-              <div 
-                key={value.id}
-                className={`about-value-card ${expandedValue === value.id ? 'about-expanded' : ''}`}
-                onClick={() => toggleValue(value.id)}
-              >
-                <h3>{value.title}</h3>
-                <p className="about-value-summary">{value.summary}</p>
-                {expandedValue === value.id && (
-                  <div className="about-value-details">
-                    <p>{value.details}</p>
-                  </div>
-                )}
-                <div className="about-value-indicator">
-                  {expandedValue === value.id ? '−' : '+'}
-                </div>
-              </div>
-            ))}
+<section className="about-section about-values-section">
+  <div className="about-container">
+    <h2 className="about-section-title">
+      <span>Our Values</span>
+    </h2>
+    <div className="about-values-grid">
+      {values.map((value) => (
+        <div 
+          key={value.id}
+          className={`about-value-card ${expandedValue === value.id ? 'about-expanded' : ''}`}
+          onClick={() => toggleValue(value.id)}
+        >
+          <div className="about-value-icon-container">
+            {value.icon}
+          </div>
+          <h3>{value.title}</h3>
+          <p className="about-value-summary">{value.summary}</p>
+          {expandedValue === value.id && (
+            <div className="about-value-details">
+              <p>{value.details}</p>
+            </div>
+          )}
+          <div className="about-value-indicator">
+            {expandedValue === value.id ? '−' : '+'}
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Team Section */}
       <section className="about-section about-team-section">
