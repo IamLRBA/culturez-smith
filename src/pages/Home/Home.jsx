@@ -114,7 +114,7 @@ const Home = () => {
       category: 'T-Shirts',
       cover: '/images/culturez/tshirt.jpg',
       date: '2023-06-15',
-      description: 'Our premium cotton t-shirt with unique Culturez by Smith embroidery. Made from 100% organic cotton with a tailored fit for maximum comfort.',
+      description: 'Our premium cotton t-shirt with unique Culturez® embroidery. Made from 100% organic cotton with a tailored fit for maximum comfort.',
       price: '$39.99',
       sizes: ['S', 'M', 'L', 'XL'],
       colors: ['Black', 'White', 'Olive']
@@ -125,7 +125,7 @@ const Home = () => {
       category: 'Pants',
       cover: '/images/culturez/pants.jpg',
       date: '2023-06-10',
-      description: 'Slim-fit designer pants with premium stitching and durable fabric. Perfect for both casual and semi-formal occasions.',
+      description: 'Slim-fit and baggy designer pants with premium stitching and durable fabric. Perfect for both casual and semi-formal occasions.',
       price: '$79.99',
       sizes: ['28-32', '34-38', '40-44'],
       colors: ['Black', 'Khaki', 'Navy']
@@ -149,14 +149,14 @@ const Home = () => {
       name: 'Mayulu Johnson',
       role: 'Fashion Blogger',
       image: '/images/testimonials/client1.jpg',
-      text: 'Culturez has completely transformed my wardrobe. The quality and unique designs are unmatched in the market.'
+      text: 'Culturez® has completely transformed my wardrobe. The quality and unique designs are unmatched in the market.'
     },
     {
       id: 2,
       name: 'Mugabi Williams',
       role: 'Stylist',
       image: '/images/testimonials/client2.jpg',
-      text: 'My clients always ask where I get these amazing pieces. Culturez is my go-to for statement fashion items.'
+      text: 'My clients always ask where I get these amazing pieces. Culturez® is my go-to for statement fashion items.'
     },
     {
       id: 3,
@@ -170,14 +170,14 @@ const Home = () => {
       name: 'Mason Park',
       role: 'Model',
       image: '/images/testimonials/client4.jpg',
-      text: 'I wear Culturez to all my castings. The designs make me stand out and the comfort is unbeatable.'
+      text: 'I wear Culturez® to all my castings. The designs make me stand out and the comfort is unbeatable.'
     },
     {
       id: 5,
       name: 'David Miller',
       role: 'Photographer',
       image: '/images/testimonials/client5.jpg',
-      text: 'As someone who works in fashion, I can confidently say Culturez is setting new standards in urban wear.'
+      text: 'As someone who works in fashion, I can confidently say Culturez® is setting new standards in urban wear.'
     }
   ];
 
@@ -203,7 +203,7 @@ const Home = () => {
               damping: 10
             }}
           >
-            <span className="home-color-changing">CULTUREZ</span> Fashion Store
+            <span className="home-color-changing">CULTUREZ®</span> Fashion Store
           </motion.h1>
           <motion.p 
             className="home-hero-subtitle"
@@ -255,7 +255,7 @@ const Home = () => {
       <section className="home-section home-culturez-section">
         <div className="home-container">
           <h2 className="home-section-title">
-            <span className="home-highlighted-border">Culturez</span> by Smith
+            <span className="home-highlighted-border">Culturez®</span> by Smith
           </h2>
           <div className="home-releases-grid">
             {culturezItems.map((item, index) => (
@@ -297,7 +297,7 @@ const Home = () => {
 
           <div className="home-section-footer">
             <NavLink to="/culturez" className="home-release-btn">
-              View Full Collection <FaArrowRight />
+              View Our Full Collection <FaArrowRight />
             </NavLink>
           </div>
         </div>

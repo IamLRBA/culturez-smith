@@ -178,7 +178,7 @@ const Culturez = () => {
                   ease: 'linear'
                 }}
               >
-                Culturez
+                Culturez®
               </motion.span> Products
             </motion.h2>
             <p className="culturez-subtitle">
