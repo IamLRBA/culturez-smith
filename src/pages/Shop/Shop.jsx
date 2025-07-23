@@ -177,7 +177,7 @@ const Shop = () => {
         products: [
           {
             id: 8,
-            title: 'Textured Knit Shirt',
+            title: 'Textured Shirt',
             price: 64.99,
             images: Array(4).fill().map((_, i) => `/images/products/shirts/textured-${i+1}.jpg`),
             description: 'Unique textured fabric with interesting patterns',
@@ -192,7 +192,7 @@ const Shop = () => {
         products: [
           {
             id: 9,
-            title: 'Vintage Wash Tee',
+            title: 'Vintage Shirt',
             price: 49.99,
             images: Array(4).fill().map((_, i) => `/images/products/shirts/vintage-${i+1}.jpg`),
             description: 'Distressed vintage-style t-shirt',
@@ -273,7 +273,7 @@ const Shop = () => {
         products: [
           {
             id: 16,
-            title: 'Classic Bomber',
+            title: 'Classic Bomber and Varsity',
             price: 119.99,
             images: Array(4).fill().map((_, i) => `/images/products/coats/bomber-${i+1}.jpg`),
             description: 'Iconic bomber jacket with ribbed cuffs and hem',
@@ -318,7 +318,7 @@ const Shop = () => {
         products: [
           {
             id: 19,
-            title: 'Biker Jacket',
+            title: 'Jacket',
             price: 199.99,
             images: Array(4).fill().map((_, i) => `/images/products/coats/leather-${i+1}.jpg`),
             description: 'Premium genuine leather biker jacket',
@@ -333,7 +333,7 @@ const Shop = () => {
         products: [
           {
             id: 20,
-            title: 'Quilted Puffer',
+            title: 'Winter Puffer',
             price: 149.99,
             images: Array(4).fill().map((_, i) => `/images/products/coats/puffer-${i+1}.jpg`),
             description: 'Warm quilted puffer jacket for cold weather',
@@ -378,7 +378,7 @@ const Shop = () => {
         products: [
           {
             id: 23,
-            title: 'Quilted Vest',
+            title: 'Vest',
             price: 89.99,
             images: Array(4).fill().map((_, i) => `/images/products/coats/vests-${i+1}.jpg`),
             description: 'Warm quilted vest for layering',
@@ -393,7 +393,7 @@ const Shop = () => {
         products: [
           {
             id: 24,
-            title: 'Cable Knit Sweater',
+            title: 'Sweaters',
             price: 79.99,
             images: Array(4).fill().map((_, i) => `/images/products/coats/sweater-${i+1}.jpg`),
             description: 'Classic cable knit sweater',
@@ -440,7 +440,7 @@ const Shop = () => {
         products: [
           {
             id: 27,
-            title: 'Canvas Sneakers',
+            title: 'Sneakers',
             price: 59.99,
             images: Array(4).fill().map((_, i) => `/images/products/footwear/casual-${i+1}.jpg`),
             description: 'Classic canvas sneakers for everyday wear',
@@ -455,7 +455,7 @@ const Shop = () => {
         products: [
           {
             id: 28,
-            title: 'Leather Loafers',
+            title: 'Loafers',
             price: 89.99,
             images: Array(4).fill().map((_, i) => `/images/products/footwear/gentle-${i+1}.jpg`),
             description: 'Premium leather loafers for a refined look',
@@ -470,7 +470,7 @@ const Shop = () => {
         products: [
           {
             id: 29,
-            title: 'High-Top Sneakers',
+            title: 'Sneakers',
             price: 99.99,
             images: Array(4).fill().map((_, i) => `/images/products/footwear/streetwear-${i+1}.jpg`),
             description: 'Stylish high-top sneakers with cushioned soles',
@@ -485,7 +485,7 @@ const Shop = () => {
         products: [
           {
             id: 30,
-            title: 'Leather Sandals',
+            title: 'Slides',
             price: 49.99,
             images: Array(4).fill().map((_, i) => `/images/products/footwear/sandals-${i+1}.jpg`),
             description: 'Comfortable leather sandals for warm weather',
@@ -502,7 +502,7 @@ const Shop = () => {
         products: [
           {
             id: 31,
-            title: 'Leather Backpack',
+            title: 'Bags',
             price: 129.99,
             images: Array(4).fill().map((_, i) => `/images/products/accessories/bags-${i+1}.jpg`),
             description: 'Stylish leather backpack with multiple compartments',
@@ -532,7 +532,7 @@ const Shop = () => {
         products: [
           {
             id: 33,
-            title: 'Wool Beanie',
+            title: 'Headgears',
             price: 29.99,
             images: Array(4).fill().map((_, i) => `/images/products/accessories/headwear-${i+1}.jpg`),
             description: 'Warm wool beanie for cold weather',
@@ -586,7 +586,7 @@ const Shop = () => {
         products: [
           {
             id: 38,
-            title: 'Fashion Magazine',
+            title: 'Books',
             price: 14.99,
             images: Array(4).fill().map((_, i) => `/images/products/accessories/literature-${i+1}.jpg`),
             description: 'Latest issue of our exclusive fashion magazine',
