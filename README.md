@@ -6,7 +6,7 @@
 
 # Project Description
 
-This Culturez-by-Smith project is a website showcasing a premium fashion brand that is a blend of urban culture and contemporary style. The platform serves as a digital hub for the brand, featuring product collections, lookbooks, brand story, and company details.
+This Culturez-by-Smith project is a professional website showcasing a premium fashion brand that is a blend of urban culture and contemporary style. The platform serves as a digital hub for the brand, featuring product collections, lookbooks, brand story, and company details.
 
 Built as a modern single-page application using React, the website offers smooth navigation and responsive design to accommodate visitors across all device types. Key features include product showcases, collection galleries, shopping functionality, and informational pages about the brand.
 
